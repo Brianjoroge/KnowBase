@@ -1,0 +1,419 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <body class="app-customization app-customization-general app">
+    <div class="toast-container">
+</div>
+
+      <!-- Sidebar -->
+  {% include 'partials/_sidebar.html' %}
+
+  <!-- Main Content -->
+  <div class="main-content">
+      {% include 'partials/_navbar.html' %}
+    <div class="container-fluid" style="padding: 1.5rem;">
+      
+<div class="card">
+  <div class="card-body">
+    <form enctype="multipart/form-data" action="{% url 'general' %}" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="ndES4vg9hEBmsm5N1hYMmh/YH0ZRJubaJIIIB0Sur/mrEmC3w2ClR9Bv+GOidHgwvjjLKBeJtFgqX6x3pOYaGA==">
+
+    <div class="row">
+      <div class="form-group col-xl-7">
+        <label for="site_company">Company Name</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="Your company name will be displayed in the footer of your site."></i>
+        <input class="form-control" placeholder="Your company&#39;s name (e.g. Acme)" maxlength="40" size="40" type="text" name="site[company]" id="site_company">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xl-7">
+        <label for="site_name">KnowBase Site Name</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="This name will appear front and center on your knowledge base's homepage."></i>
+        <input class="form-control" placeholder="Your knowledge base&#39;s name (e.g. Acme Help Center)" maxlength="40" size="40" type="text" value="dlmade" name="site[name]" id="site_name">
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_uid">KnowBase Site ID</label>
+          <input class="form-control" readonly="readonly" type="text" value="27207057848" name="site[uid]" id="site_uid">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_subdomain">Permanent Subdomain</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="This is your permanent KnowBase subdomain that you can use instead of (or in addition to) a custom domain."></i>
+          <div class="input-group">
+            <input value="site-27207057848.KnowBase.io" class="form-control" readonly="readonly" type="text" name="site[subdomain]" id="site_subdomain">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary copy-to-clipboard" data-clipboard-target="#site_subdomain" type="button"><i class="icon ion-ios-copy"></i></button>
+            </div>
+          </div>
+          <div class="mt-1">
+              <span class="text-success"><i class="icon ion-ios-cloud-done mr-2"></i>Your subdomain is live!</span>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_custom_domain">Custom domain</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="Enter the domain (or subdomain) you own that you'd like to point to your KnowBase site"></i>
+          <input placeholder="support.yourdomain.com" class="form-control" type="text" name="site[custom_domain]" id="site_custom_domain">
+        </div>
+      </div>
+
+
+      <!--
+      <div class="row">
+        <div class="col-xl-7">
+          <div class="text-muted"><a target="_blank" href="">Click here</a> to read our guide to setting up a custom domain.</div>
+        </div>
+      </div>
+      -->
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <div class="text-muted">
+            Choose the theme of your site.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_theme">Theme</label>
+          <select class="form-control" name="site[theme]" id="site_theme"><option selected="selected" value="knowledge_base">Knowledge Base</option>
+<option value="documentation">Documentation</option></select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <div class="text-muted">
+            Style your site by choosing a header color and an accent color below.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_header_footer_color">Header Color</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="This will be the color of your knowledge base's header and footer."></i>
+          <input type="hidden" value="#1e1e1e" name="site[header_footer_color]" id="site_header_footer_color">
+          <div class="color-picker" id="header-footer-color-picker"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_accent_color">Accent color</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="This will be the color of your knowledge base's buttons and icons."></i>
+          <input class="color-field" type="hidden" value="#009dff" name="site[accent_color]" id="site_accent_color">
+          <div class="color-picker" id="accent-color-picker"></div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <div class="text-muted">
+            Upload a favicon image below (optional). Non-square images will be cropped to square.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_favicon_image">Favicon image</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="This is the icon that will appear in the browser tab."></i><br>
+          <input accept=".jpg, .jpeg, .png, .gif, .svg, .ico" type="file" name="site[favicon_image]" id="site_favicon_image">
+          <div id="favicon-image-preview-container" class="mt-3 d-none">
+              <img class="mx-auto" id="favicon-image-preview" src="">
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <div class="text-muted">
+            Upload your logo below (optional). This defaults to your KnowBase Site Name.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_logo_image">Logo image</label><br>
+          <input accept=".jpg, .jpeg, .png, .gif" type="file" name="site[logo_image]" id="site_logo_image">
+          <div id="logo-image-preview-container" class="d-none">
+            <div class="p-5 mt-3 text-center rounded" id="logo-image-preview-color-block" style="background-color: #1e1e1e;">
+              <img class="mx-auto" id="logo-image-preview" style="height: 40px;" src="">
+            </div>
+            <div class="text-muted mt-2">This is a preview of your logo image against your chosen header & footer color.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <div class="text-muted">
+            Set both 'Home Website Link' fields below to enable a link in the top right-hand corner of your KnowBase site that links back to your main website.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_home_external_link_name">Home Website Link Name</label>
+          <input class="form-control" placeholder="Your website&#39;s name (e.g. Acme)" type="text" name="site[home_external_link_name]" id="site_home_external_link_name">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_home_external_link_url">Home Website Link URL</label>
+          <input class="form-control" placeholder="Your website&#39;s homepage (e.g. https://www.acme.com/)" type="text" name="site[home_external_link_url]" id="site_home_external_link_url">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_support_email">Support Email Address</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="If you enter an email address here, it we'll display a 'Contact Support' button at the bottom of your site with a link to it."></i>
+          <input class="form-control" placeholder="Contact email for visitors needing more help (e.g. support@acme.com)" type="email" name="site[support_email]" id="site_support_email">
+        </div>
+      </div>
+
+      <!--
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_support_phone">
+            Support Phone Number <span class="subtext ml-1">Optional</span>
+</label>          <input class="form-control" placeholder="Contact phone number for visitors needing more help (e.g. (555) 555-5555)" disabled="disabled" type="text" name="site[support_phone]" id="site_support_phone" />
+        </div>
+      </div>
+      -->
+
+      <hr>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_active">Publish Site</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="When enabled, your site will be live on the web."></i>
+          <br>
+          <label class="switch">
+            <input name="site[active]" type="hidden" value="0"><input type="checkbox" value="1" checked="checked" name="site[active]" id="site_active">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_allow_indexing">Allow site to be indexed by search engines</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="When disabled, your site will not be indexed by search engines."></i>
+          <br>
+          <label class="switch">
+            <input name="site[allow_indexing]" type="hidden" value="0"><input type="checkbox" value="1" checked="checked" name="site[allow_indexing]" id="site_allow_indexing">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- <hr class="mt-0"> -->
+
+      <div class="row">
+        <div class="form-group col-xl-7">
+          <label for="site_is_password_protected">Protect site with a password</label><i class="ml-2 icon ion-md-help-circle" data-toggle="tooltip" data-placement="top" title="Enable password protection and set a password to control who can view your site."></i>
+          <br>
+          <label class="switch">
+            <input name="site[is_password_protected]" type="hidden" value="0"><input type="checkbox" value="1" name="site[is_password_protected]" id="site_is_password_protected">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="row" id="site-password-field-container">
+        <div class="form-group col-xl-7">
+          <label for="site_password">Site Password</label>
+          <input class="form-control" placeholder="Enter a password here to make your site private" required="required" type="text" name="site[password]" id="site_password">
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-12">
+          <a class="btn btn-secondary mr-3" href="general.html">Cancel</a><input type="submit" name="commit" value="Save Changes" class="btn btn-primary" data-disable-with="Please wait...">
+        </div>
+      </div>
+
+</form>  </div>
+</div>
+
+<!-- Modern or es5 bundle -->
+<script src="{% static 'js/pickr.es5.min.js' %}"></script>
+
+<script>
+  $(function() {
+    $imagePreviewColorBlock = $("#logo-image-preview-color-block");
+
+    $siteIsPasswordProtectedField = $("#site_is_password_protected")
+    $sitePasswordFieldContainer = $("#site-password-field-container")
+    $sitePasswordField = $("#site_password")
+
+    $siteIsPasswordProtectedField.on("change", managePasswordFieldContainer)
+
+    managePasswordFieldContainer()
+
+    function managePasswordFieldContainer() {
+      if ($siteIsPasswordProtectedField.prop("checked")) {
+        $sitePasswordFieldContainer.show();
+        $sitePasswordField.attr("disabled", false)
+      } else {
+        $sitePasswordFieldContainer.hide();
+        $sitePasswordField.attr("disabled", true);
+      }
+    }
+
+    /* BEGIN COLOR PICKER */
+
+    const pickrOptions = {
+      theme: 'classic', // or 'monolith', or 'nano'
+
+      swatches: [
+      'rgba(0, 0, 0, 1)',
+      'rgba(255, 255, 255, 1)',
+      'rgba(244, 67, 54, 1)',
+      'rgba(233, 30, 99, 1)',
+      'rgba(156, 39, 176, 1)',
+      'rgba(103, 58, 183, 1)',
+      'rgba(63, 81, 181, 1)',
+      'rgba(33, 150, 243, 1)',
+      'rgba(3, 169, 244, 1)',
+      'rgba(0, 188, 212, 1)',
+      'rgba(0, 150, 136, 1)',
+      // 'rgba(76, 175, 80, 1)',
+      'rgba(139, 195, 74, 1)',
+      'rgba(205, 220, 57, 1)',
+      'rgba(255, 235, 59, 1)',
+      'rgba(255, 193, 7, 1)',
+      ],
+
+      components: {
+        // Main components
+        preview: true,
+        opacity: false,
+        hue: true,
+
+        // Input / output Options
+        interaction: {
+          hex: false,
+          rgba: false,
+          hsla: false,
+          hsva: false,
+          cmyk: false,
+          input: true,
+          cancel: false,
+          clear: false,
+          save: false
+        },
+        lockOpacity: true,
+        useAsButton: false,
+      }
+    }
+
+    const accentColorPickrOptions = pickrOptions
+    accentColorPickrOptions.el = "#accent-color-picker"
+    const accentColorPickr = Pickr.create(accentColorPickrOptions);
+
+    const headerFooterColorPickrOptions = pickrOptions
+    headerFooterColorPickrOptions.el = "#header-footer-color-picker"
+    const headerFooterColorPickr = Pickr.create(headerFooterColorPickrOptions);
+
+    accentColorPickr
+      .on('init', instance => {
+        console.log('init', instance);
+        const originalColor = $("#site_accent_color").val();
+        instance.setColor(originalColor);
+      })
+      .on('hide', instance => {})
+      .on('show', (color, instance) => {})
+      .on('save', (color, instance) => {
+        $("#site_accent_color").val(instance.getSelectedColor().toHEXA().toString());
+      })
+      .on('clear', instance => {})
+      .on('change', (color, source, instance) => {
+        instance.applyColor();
+        console.log("changed")
+        console.log(instance)
+      }).on('changestop', instance => {})
+      .on('cancel', instance => {
+        instance.hide();
+      })
+      .on('swatchselect', (color, instance) => {});
+
+    headerFooterColorPickr.on('init', instance => {
+      const originalColor = $("#site_header_footer_color").val();
+      instance.setColor(originalColor);
+    }).on('hide', instance => {
+    }).on('show', (color, instance) => {
+    }).on('save', (color, instance) => {
+      var newHeaderFooterColor = instance.getSelectedColor().toHEXA().toString();
+      $("#site_header_footer_color").val(newHeaderFooterColor);
+      // update logo preview
+      $imagePreviewColorBlock.attr("style", "background-color: " + newHeaderFooterColor);
+    }).on('clear', instance => {
+    }).on('change', (color, source, instance) => {
+        instance.applyColor();
+    }).on('changestop', instance => {
+    }).on('cancel', instance => {
+        instance.hide();
+    }).on('swatchselect', (color, instance) => {
+    });
+
+    /* END COLOR PICKER */
+
+    // update logo image preview
+    if ($('#logo-image-preview').attr('src').length != 0) {
+      $("#logo-image-preview-container").removeClass("d-none");
+    }
+
+    // update favicon image preview
+    if ($('#favicon-image-preview').attr('src').length != 0) {
+      $("#favicon-image-preview-container").removeClass("d-none");
+    }
+
+    $("#site_logo_image").change(function() {
+      readURL(this, "logo-image-preview");
+    });
+
+    $("#site_favicon_image").change(function() {
+      readURL(this, "favicon-image-preview");
+    });
+
+    // update image previews
+    function readURL(input, selector) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $(`#${selector}`).attr('src', e.target.result);
+          $(`#${selector}-container`).removeClass("d-none");
+        }
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+      }
+    }
+  });
+</script>
+
+    </div>
+  </div>
+
+  </body>
+{% endblock %}
+
+

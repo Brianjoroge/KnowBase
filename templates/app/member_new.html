@@ -1,0 +1,96 @@
+﻿{% extends 'base.html' %}
+{% block content %}
+
+  <body class="app-site_user_invitations app-site_user_invitations-new app">
+    <div class="toast-container">
+</div>
+
+      <!-- Sidebar -->
+    {% include 'partials/_sidebar.html' %}
+  <!-- Main Content -->
+  <div class="main-content">
+      {% include 'partials/_navbar.html' %}
+    <div class="container-fluid" style="padding: 1.5rem;">
+      <div class="toolbar mb-4">
+  <a class="btn btn-light btn-sm mx-1" href="{% url 'members' %}">
+    <i class="icon ion-ios-arrow-back mr-1"></i> Back to Members
+</a></div>
+
+<div class="h5 mb-3">Invite a new member</div>
+<div class="card">
+  <div class="card-body">
+    <form action="#" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="QqsTK154adeybk2ZUeSBdSxL87ZzxH1igqB+posLdG9ZOddGPb+RyL+NGKxomc/JGzdjH2pMdFbuSCf3RJag1Q==">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="site_user_invitation_email">Email Address</label>
+            <input placeholder="user@domain.com" class="form-control" required="required" type="email" name="site_user_invitation[email]" id="site_user_invitation_email">
+          </div>
+          <div class="form-group">
+            <label for="site_user_invitation_role">Role</label>
+            <select required="required" class="form-control" name="site_user_invitation[role]" id="site_user_invitation_role"><option value="">Choose a role for this member</option>
+<option value="owner">Owner</option>
+<option value="admin">Admin</option>
+<option value="user">User</option></select>
+            <div class="mt-1">
+              <a data-toggle="modal" data-target="#roles-modal" href="javascript:;">How do roles work?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 text-left">
+        <a class="btn btn-secondary" href="{% url 'members' %}">Cancel</a><button name="button" type="submit" class="btn btn-primary ml-2" data-disable-with="Please wait...">
+          <i class="icon ion-ios-paper-plane mr-2"></i>Send Invitation
+</button>      </div>
+</form>  </div>
+</div>
+
+<div class="modal" id="roles-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-5">
+        <div class="mb-4">
+          <div class="text-center">
+            <div class="h3 mb-3">How Roles Work</div>
+          </div>
+
+            <div class="my-4 py-1">
+              <div class="h5">Owners can:</div>
+                <ul>
+                    <li>Add and remove members (including owners)</li>
+                    <li>Manage billing</li>
+                    <li>Close the account</li>
+                    <li>Manage customization settings</li>
+                    <li>Edit site content</li>
+                </ul>
+            </div>
+            <div class="my-4 py-1">
+              <div class="h5">Admins can:</div>
+                <ul>
+                    <li>Add and remove members (excluding owners)</li>
+                    <li>Manage customization settings</li>
+                    <li>Edit site content</li>
+                </ul>
+            </div>
+            <div class="my-4 py-1">
+              <div class="h5">Users can:</div>
+                <ul>
+                    <li>Edit site content</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+  </body>
+{% endblock %}

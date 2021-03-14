@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+  <body class="app-articles app-articles-show app">
+    <div class="toast-container">
+</div>
+
+      <!-- Sidebar -->
+ {% include 'partials/_sidebar.html' %}
+
+  <!-- Main Content -->
+  <div class="main-content">
+   {% include 'partials/_navbar.html' %}
+    <div class="container-fluid" style="padding: 1.5rem;">
+      <div class="toolbar mb-4">
+  <a class="btn btn-light btn-sm mx-1" href="{% url 'details' articles.section.id %}">
+    <i class="icon ion-ios-arrow-back mr-1"></i> Back to Section
+</a>  <a class="btn btn-light btn-sm mx-1" href="/app/articles/56013150858/edit">
+    <i class="icon ion-md-create mr-1"></i> Edit
+</a>    <a class="btn btn-light btn-sm mx-1" rel="nofollow" data-method="put" href="/app/articles/56013150858?article%5Baasm_state%5D=draft">
+      <i class="icon ion-ios-eye-off mr-1"></i> Mark as Draft
+</a>    <a class="btn btn-light btn-sm mx-1" rel="nofollow" data-method="put" href="/app/articles/56013150858?article%5Baasm_state%5D=archived">
+      <i class="icon ion-ios-archive mr-1"></i> Archive
+</a>  <a class="btn btn-danger btn-sm mx-1" data-confirm="Are you sure you want to delete this article? This cannot be undone." rel="nofollow" data-method="delete" href="/app/articles/56013150858">
+    <i class="icon ion-md-trash mr-1"></i> Delete
+</a>    <a class="btn btn-primary btn-sm mx-1" target="_blank" href="{% url 'published_article' articles.id %}">
+      <i class="icon ion-md-open mr-1"></i> View Live Article
+</a></div>
+
+
+<div class="h5 mb-3">Article Details</div>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-show">
+          <tbody>
+            <tr>
+              <th>Title</th>
+              
+              <td>{{articles.title}}</td>
+            </tr>
+            <tr>
+              <th>State</th>
+              <td>
+                <span class="badge badge-default">
+                <i class="icon ion-ios-eye mr-2"></i> 
+                {% if articles.published == 0 %}
+                    Draft
+                {% else %}
+                    Published
+                {% endif %}
+                </span>              </td>
+            </tr>
+            <tr>
+              <th>Section</th>
+              <td><a class="dark-link" href="{% url 'details' articles.section.id %}"> {{ articles.section.title  }} </a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="h5 mb-3">Content Preview</div>
+<div class="card">
+  <div class="card-body">
+      <div class="trix-content">
+  <div>
+    {{ articles.content | safe }}     
+</div>
+</div>
+
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  </body>
+{% endblock %}

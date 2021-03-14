@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body class="devise-sessions devise-sessions-new devise">
+  <div class="toast-container">
+  </div>
+  {% if messages %}
+  {% for message in messages %}
+      {% if message.tags == 'success' %}
+
+          <script>
+              Notiflix.Notify.Success("{{ message }}");
+          </script>
+
+      {% else %}
+          <script>
+              Notiflix.Notify.Failure("{{ message }}");
+          </script>
+      {% endif %}
+  {% endfor %}
+
+{% endif %}
+
+  <nav class="navbar bg-white navbar-default navbar-simple">
+    <div class="container">
+      <a class="navbar-brand mx-auto" href="{% url 'index' %}">
+        <img class="navbar-logo" src="{% static 'images/logo.png' %}" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h4 class="text-center my-4">Welcome back!</h4>
+        <form class="form-devise" id="new_user" action="{% url 'signin' %}" accept-charset="UTF-8" method="post">
+
+          {% csrf_token %}
+          <fieldset class="form-group">
+            <label for="user_email">Email</label>
+            <input placeholder="Enter your email address" class="form-control" autofocus="autofocus" required="required"
+              type="email" name='user_name' id="user_email" />
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="user_password">Password</label>
+            <input placeholder="•••••••••••••" class="form-control" required="required" type="password" name='password'
+              id="user_password" />
+          </fieldset>
+          <input type="submit" name="commit" value="Sign In" class="btn btn-block btn-primary mt-4"
+            data-disable-with="Sign In" />
+          <div class="shared-links my-4 text-center">
+
+            Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a><br />
+
+            <a href="{% url 'newuser' %}">Forgot your password?</a><br />
+
+
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,115 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <body class="app-account app-account-billing app">
+    <div class="toast-container">
+</div>
+
+      <!-- Sidebar -->
+    {% include 'partials/_sidebar.html' %}
+  <!-- Main Content -->
+  <div class="main-content">
+      {% include 'partials/_navbar.html' %}
+    <div class="container-fluid" style="padding: 1.5rem;">
+        <div class="card">
+    <div class="card-body text-center">
+      <!-- <div class="mb-3">
+            <p>Your 14-day free trial ends on <span class="font-weight-semibold">March 14, 2021</span>.</p>
+            <p>Please choose a plan and add a payment method. You won't be billed until the end of your trial.</p>
+      </div> -->
+
+      <div class="row text-left">
+        <div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+          <!-- <form id="plan-select-with-stripe-checkout" action="#" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="L9gzU5yOuiaX/jB+7Ww+cPeGTAX70e5GdgBSjAtbdpzUlkG/dzTZiwciFO/wEfJ+qus9Bq0jU3kNZ26CPj5THA=="> -->
+            <div class="form-group">
+              <label for="plan">Choose a payment plan</label>
+              <select id="plan-select" class="form-control" required="required" name="plan"><option value="">Choose a payment plan</option>
+<option value="annual">Annual - $20/mo (paid annually)</option>
+<!-- <option value="monthly">Monthly - $25/mo (paid monthly)</option> -->
+</select>
+            </div>
+            <button name="button" type="submit" id="submitBtn" class="btn btn-primary btn-block">Choose Plan</button>
+<!-- </form>         -->
+<!-- </div>
+      </div>
+
+      <div class="mt-3">
+          <a data-toggle="modal" data-target="#promo-code-modal" href="javascript:;">Have a promo code?</a>
+      </div>
+    </div>
+  </div> -->
+
+  
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+  console.log("Sanity check!");
+
+// Get Stripe publishable key
+fetch("{% url 'billing_config' %}" )
+.then((result) => { return result.json(); })
+.then((data) => {
+  // Initialize Stripe.js
+  const stripe = Stripe(data.publicKey);
+
+  // new
+  // Event handler
+  document.querySelector("#submitBtn").addEventListener("click", () => {
+    // Get Checkout Session ID
+    fetch("{% url 'create_checkout_session' %}")
+    .then((result) => { return result.json(); })
+    .then((data) => {
+      console.log(data);
+      // Redirect to Stripe Checkout
+      return stripe.redirectToCheckout({sessionId: data.sessionId})
+    })
+    .then((res) => {
+      console.log(res);
+    });
+  });
+});
+</script>
+  <!-- <script src="{% static 'js/index.htm.js' %}"></script>
+  <script>
+    $(function() {
+      $planSelect = $("#plan-select");
+      $planSelectionForm = $("#plan-select-with-stripe-checkout")
+
+      // focus on the promo code field when displaying the coupon modal
+      $('#promo-code-modal').on('shown.bs.modal', function(e) {
+        $("#coupon").focus();
+      })
+
+      // Stripe Checkout
+      $planSelectionForm.submit(function(e) {
+        // prevent form submission
+        e.preventDefault();
+
+        // set up session ids from serverside
+        const planSessionIds = {
+          "monthly": "cs_live_a1lh0Vec2I0gXJv2kwl5ZZYYsjRfAXMTjsOzJB3ZNhwL4NFlXZeA8bWIId",
+          "annual": "cs_live_a1DRY607LUYRBSkB0xrp6ubv54XA2HbE4T8dmlcEzeK77lzlSMlyh7lPgB"
+        };
+        var selectedPlanSessionId = planSessionIds[$planSelect.val()];
+
+        // trigger stripe checkout
+        var stripe = Stripe('pk_live_iydKyWyHB7Qz6O2Pz3HFpE0k000kkEtrRU');
+        stripe.redirectToCheckout({
+          // Make the id field from the Checkout Session creation API response
+          // available to this file, so you can provide it as parameter here
+          // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+          sessionId: selectedPlanSessionId
+        }).then(function (result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, display the localized error message to your customer
+          // using `result.error.message`.
+        });
+      });
+    });
+  </script> -->
+
+    </div>
+  </div>
+
+  </body>
+{% endblock %}

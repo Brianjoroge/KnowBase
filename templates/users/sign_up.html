@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body class="users-registrations users-registrations-new users">
+  <div class="toast-container">
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+
+    <script>
+      Notiflix.Notify.Success("{{ message }}");
+    </script>
+
+    {% else %}
+    <script>
+      Notiflix.Notify.Failure("{{ message }}");
+    </script>
+    {% endif %}
+    {% endfor %}
+
+    {% endif %}
+
+  </div>
+
+  <nav class="navbar bg-white navbar-default navbar-simple">
+    <div class="container">
+      <a class="navbar-brand mx-auto" href="{% url 'index' %}">
+        <img class="navbar-logo" src="{% static 'images/logo.png' %}" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="h4 text-center my-4">
+          Start your 14 Day Free Trial
+        </div>
+        <form class="form-devise" id="new_user" action="{% url 'signup' %}" accept-charset="UTF-8" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="authenticity_token"
+            value="85TwswF5Eu0cStN5ya2hbqtThExAmE6qfstgzvAm0pdNc9QwMmRZ2DX37AvgJi718wMcYK6OQqOJzwGIEJWMWw==" />
+          <fieldset class="form-group">
+            <label for="user_email">Email</label>
+            <input placeholder="Enter your email address" class="form-control" autofocus="autofocus" required="required"
+              type="email" name="username" id="user_email" />
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="user_password">Password</label>
+            <input placeholder="Choose a password" class="form-control" required="required" type="password"
+              name="password" id="user_password" />
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="user_password_confirmation">Password Confirmation</label>
+            <input placeholder="Type your password again" class="form-control" required="required" type="password"
+              name="confirm_password" id="user_password_confirmation" />
+          </fieldset>
+          <input type="submit" name="commit" value="Start Free Trial" class="btn btn-block btn-primary mt-4"
+            data-disable-with="Start Free Trial" />
+          <div class="text-muted text-center mt-3"><span class="mr-3">🎉</span>No credit card required!</div>
+          <div class="shared-links my-4 text-center">
+            Already have an account? <a href="{% url 'signin' %}">Sign in</a><br />
+
+
+            <a href="{% url 'newuser' %}">Forgot your password?</a><br />
+
+
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <body class="app-sections app-sections-index app">
+    <div class="toast-container">
+</div>
+
+      <!-- Sidebar -->
+{% include 'partials/_sidebar.html' %}
+
+  <!-- Main Content -->
+  <div class="main-content">
+      {% include 'partials/_navbar.html' %}
+
+    <div class="container-fluid" style="padding: 1.5rem;">
+      
+<div class="toolbar mb-4">
+  <a class="btn btn-primary btn-sm" href="{% url 'newsection' %}">
+    <i class="icon ion-md-add mr-1"></i> New Section
+</a></div>
+
+<!-- <div class="searchbar my-4">
+  <form action="/app/sections" accept-charset="UTF-8" method="get">
+    <div class="input-group">
+      <input class="form-control" placeholder="Search sections..." type="text" name="search" id="search" />
+      <div class="input-group-append">
+        <button name="button" type="submit" class="btn btn-primary">
+          <i class="icon ion-ios-search mr-1"></i> Search
+</button>      </div>
+    </div>
+</form></div> -->
+
+<div class="card">
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 150px;">Sort Order</th>
+          <th style="width: 60px;">Icon</th>
+        <th>Section Name</th>
+        <th>Articles in Section</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in title%}
+          <tr>
+            <td> 
+              <div class="d-inline-block mr-2" style="width: 30px;">{{ forloop.counter}}</div>
+            </td>
+              <td>
+                <a class="dark-link" style="border-bottom: none !important;" href="{% url 'details' t.id %}">
+                    <div class=" " style="font-size: 22px;">
+                      <i class="{{t.icons}}" id="icon-thumbnail-icon-preview"></i>
+                    </div>
+</a>              </td>
+            <td class="text-left"><a class="dark-link" href="{% url 'details' t.id %}">{{t.title}}</a></td>
+            <td>{{ t.section_count }}</td>
+            <td>
+              <a class="btn btn-primary btn-sm" href="{% url 'details' t.id %}">
+              View Articles <i class="icon ion-ios-arrow-forward ml-2"></i>
+</a>            </td>
+          </tr>
+          {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+    </div>
+  </div>
+
+  </body>
+{% endblock %}
+
+
+
+

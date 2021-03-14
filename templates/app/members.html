@@ -1,0 +1,78 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <body class="app-site_users app-site_users-index app">
+    <div class="toast-container">
+</div>
+
+      <!-- Sidebar -->
+    {% include 'partials/_sidebar.html' %}
+
+  <!-- Main Content -->
+  <div class="main-content">
+      {% include 'partials/_navbar.html' %}
+    <div class="container-fluid" style="padding: 1.5rem;">
+      <div class="toolbar mb-4">
+  <a class="btn btn-primary btn-sm mr-1" href="{% url 'newmember' %}">
+    <i class="icon ion-md-add mr-1"></i> Invite Member
+</a></div>
+
+<div class="h5 mb-3">Members</div>
+<div class="card">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="w-25">Email</th>
+        <th class="w-25">Role</th>
+        <th class="w-25">Member Since</th>
+        <th class="w-25">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+            cogejo3752@seacob.com
+          </td>
+          <td>
+            Owner
+              <span class="badge badge-primary ml-1">You</span>
+          </td>
+          <td>February 28, 2021</td>
+          <td>
+              <a class="btn btn-sm btn-danger" data-confirm="Are you sure you want to remove this user from your site?" rel="nofollow" data-method="delete" href="#">Remove</a>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="h5 mb-3">Pending Invitations</div>
+<div class="card">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="w-25">Email</th>
+        <th class="w-25">Role</th>
+        <th class="w-25">Invitation Sent</th>
+        <th class="w-25">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center" colspan="100">
+          <div class="mt-4 mb-2">
+            There are no pending member invitations.
+          </div>
+          <a class="btn btn-primary btn-sm mt-2 mb-4" href="{% url 'newmember' %}">
+            <i class="icon ion-md-add mr-1"></i> Invite Member
+</a>        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    </div>
+  </div>
+
+  </body>
+{% endblock %}

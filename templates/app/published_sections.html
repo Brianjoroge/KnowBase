@@ -1,0 +1,281 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> {{ request.user.username }}</title>
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token"
+        content="2fL92RGZncwklxyOLXRilmASu3pGYBB1BPe0/79g5fy1IBd+AWb5JIB0VhUqKbpRRjHgAzGE4KVxCjz9TXpcZw==">
+
+    <link rel="stylesheet" media="all"
+        href="{% static 'css/knowledge_base_theme-c8eb9b97ed00a7d4faca4ec48004179dd506dbc58cbf94fac594e3d538ec52bf-1.css' %}">
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        .form-control:focus {
+            border-color: #009dff;
+        }
+
+        .hero {
+            color: white !important;
+            background-color: #1e1e1e;
+        }
+
+        .hero .h1,
+        .hero .h4 {
+            color: white !important;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            color: #212529;
+        }
+
+        .section-block .section-card .section-thumbnail-icon {
+            background-color: #009dff;
+            color: white;
+        }
+
+        .btn.btn-primary {
+            background-color: #009dff !important;
+            border-color: #009dff !important;
+            color: white !important;
+        }
+
+        .btn.btn-primary:hover,
+        .btn.btn-primary:focus,
+        .btn.btn-primary:active,
+        .btn.btn-primary:visited,
+        .btn.btn-primary:focus-within {
+            background-color: #009dff !important;
+            border-color: #009dff !important;
+            color: white !important;
+        }
+
+        .navbar-header .nav-link {
+            color: white !important;
+        }
+
+        .navbar-brand {
+            color: white !important;
+        }
+
+        .navbar .navbar-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .nav-link:hover:before {
+            background-color: #f5f5f5 !important;
+        }
+
+        .nav-link {
+            background-color: transparent !important;
+        }
+
+        .nav-link.active {
+            background-color: transparent !important;
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .nav-link.active:before {
+            background-color: #009dff !important;
+        }
+
+        .trix-content {
+            font-size: 1.15rem;
+            color: #565656;
+        }
+
+        .documentation-border-bottom {
+            border-bottom-color: rgba(0, 0, 0, 0) !important;
+        }
+    </style>
+
+    <script src="{% static 'js/site-e835af41d5b5952c0837-1.js' %}"></script>
+    <script src="{% static 'js/article_vote_widget-1aa5b6ee14c5b4e3ff6b-1.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/atom-one-dark.min-1.css' %}">
+    <script src="{% static 'js/highlight.min-1.js' %}"></script>
+
+    <script>
+        hljs.configure({
+            languages: ["apache", "apacheconf", "bash", "sh", "zsh", "csharp", "cs", "c", "h", "cpp", "hpp", "cc", "hh", "c++", "h++", "cxx", "hxx", "css", "clojure", "clj", "dns", "zone", "bind", "diff", "patch", "django", "jinja", "dockerfile", "docker", "elixir", "erlang", "erl", "excel", "xls", "xlsx", "go", "golang", "xml", "html", "xhtml", "rss", "atom", "xjb", "xsd", "xsl", "plist", "svg", "http", "https", "haskell", "hs", "json", "java", "jsp", "javascript", "js", "jsx", "tex", "less", "lisp", "makefile", "mk", "mak", "markdown", "md", "mkdown", "mkd", "matlab", "nginx", "nginxconf", "objectivec", "mm", "objc", "obj-c", "php", "php3", "php4", "php5", "php6", "php7", "perl", "pl", "pm", "plaintext", "txt", "text", "pgsql", "postgres", "postgresql", "python", "py", "gyp", "r", "ruby", "rb", "gemspec", "podspec", "thor", "irb", "rust", "rs", "scss", "sql", "scala", "shell", "console", "swift", "typescript", "ts", "vbnet", "vb", "vbscript", "vbs", "yml", "yaml", "erb"]
+        });
+    </script>
+
+    <link href="{% static 'css/ionicons.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/e386e9e568-1.js' %}" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="full-height-fix-content">
+        <div class="container-fluid hero">
+            <nav class="navbar navbar-expand-md hero" style="padding-top: 1.6rem;">
+                <div class="container max-content-width">
+
+                </div>
+            </nav>
+
+            <div class="row pb-4">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row mb-5 mt-4">
+                            <div class="col-xl-6 offset-xl-3 col-md-8 offset-md-2">
+                                <div class="text-center">
+                                    <div class="h1" style="margin-bottom: 2.4rem;">{{ request.user.username }}</div>
+                                    <form action="/" accept-charset="UTF-8" method="get">
+                                        <input class="form-control form-control-lg search-box-v2 search-box-v2-lg"
+                                            placeholder="How can we help you?" type="text" name="search" id="search">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-3 max-content-width">
+            <div class="row">
+                <div class="col-12">
+                    <span class="gray-600"><a href="/">Home</a><i class="icon ion-ios-arrow-forward"
+                            style="margin: 0 0.8rem;"></i></span><a href="#">{{ section_name }}</a>
+                    <hr class="pt-0">
+                </div>
+            </div>
+        </div>
+
+        <div class="container mb-5  max-content-width">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="h1">{{section_name}}</div>
+                    <hr>
+                    {% for article in articles %}
+                    <a href="{% url 'published_article' article.id %}">
+                        <div class="py-3">
+                            <div class="media">
+                                <div class="media-body">
+                                    <div class="h4 mt-0" style="margin-bottom: 0.8rem;"> {{ article.title }}
+                                    </div>
+                                    <div class="text-muted">
+                                        {{ article.content | safe | truncatechars:160 }}
+                                    </div>
+                                    <div class="d-inline-block"
+                                        style="border-bottom: 1px solid #212529; margin-top: 0.8rem;">Read More</div>
+                                </div>
+                                <i class="icon ion-ios-arrow-forward ml-4 align-self-center "
+                                    style="font-size: 30px;"></i>
+                            </div>
+                        </div>
+                    </a>
+                    {% empty %}
+                    <div class="container py-5 my-4  max-content-width">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <div class="h4 mt-0"><i class="icon ion-ios-time"></i></div>
+                                <div class="h4 mt-0"><i class="icon ion-ios-paper"></i></div>
+                                <div class="h4 mt-0">There's nothing here yet!</div>
+                                <div class="text-muted">Publish some articles and they'll show up here.</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="full-height-fix-footer">
+
+        <div class="container-fluid py-3 footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <span class="footer-copyright">&copy; 2021 • <span class=""><a target="_blank"
+                                    href=""></a></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="toast-container">
+    </div>
+
+
+    <script src="{% static 'js/handlebars.min-1.js ' %}"></script>
+    <script src="{% static 'js/typeahead.bundle.min-1.js ' %}"></script>
+
+    <!-- <script id="result-template" type="text/x-handlebars-template">
+      <div class="tt-suggestion">
+        <div class="font-weight-semibold mb-1 article-title article-title-lg">{{title}}</div>
+        <div class="article-body article-body-lg gray-600">{{search_preview_content}}</div>
+      </div>
+    </script>
+
+    <script id="empty-template" type="text/x-handlebars-template">
+      <div class="tt-suggestion text-center">
+        Hmm, we couldn't find anything for that search.
+      </div>
+    </script> -->
+
+    <script>
+        $(function () {
+            var engine, remoteHost, template, empty;
+
+            template = Handlebars.compile($("#result-template").html());
+            empty = Handlebars.compile($("#empty-template").html());
+
+            var articles = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.whitespace,
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: "/articles/autocomplete?query=%QUERY",
+                    wildcard: "%QUERY",
+                    // transform: function(response) {
+                    //   console.log(response);
+                    //   return $.map(response, function(article) {
+                    //     return {
+                    //       title: article.title,
+                    //       search_preview_content: article.search_preview_content,
+                    //     };
+                    //   });
+                    // },
+                },
+            });
+
+            $("#search").typeahead(null, {
+                source: articles,
+                limit: 10,
+                highlight: true,
+                hint: false, // seems to make no difference
+                display: 'title', // what displays in search box as autocomplete
+                templates: {
+                    suggestion: template,
+                    empty: empty
+                }
+            });
+
+            // on selection of a suggestion, redirect to that suggestion's url
+            $("#search").bind('typeahead:select', function (e, suggestion) {
+                window.location = suggestion.url;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
