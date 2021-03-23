@@ -13,14 +13,14 @@
     <div class="container-fluid" style="padding: 1.5rem;">
       
 <div class="toolbar mb-4">
-  <a class="btn btn-light btn-sm mx-1" href="{% url 'details' %}">
+  {# <a class="btn btn-light btn-sm mx-1" href="{% url 'details' %}"> #}
     <i class="icon ion-ios-arrow-back mr-1"></i> Back to Section
 </a></div>
 
 <div class="h5 mb-3">Edit Section</div>
 <div class="card">
   <div class="card-body">
-    <form id="section-form" action="{% url 'details' %}" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="eGLxFDVrDpervPPqcatB5Oz5x8K9z94JXZSd2H9T6IC2XBHhCoqpfLaBvzR9KkaidS4HEaxIPbQwVvxzFGTWFA==">
+    <form id="section-form" action="" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="eGLxFDVrDpervPPqcatB5Oz5x8K9z94JXZSd2H9T6IC2XBHhCoqpfLaBvzR9KkaidS4HEaxIPbQwVvxzFGTWFA==">
       <div class="row">
         <div class="form-group col-lg-6">
           <label for="section_name">Section Name</label>
@@ -5430,7 +5430,7 @@
 
 
       <div class="mt-4 text-left">
-        <a class="btn btn-secondary" href="{% url 'details' %}">Cancel</a>
+        {# <a class="btn btn-secondary" href="{% url 'details' %}">Cancel</a> #}
         <input type="submit" name="commit" value="Save Changes" class="btn btn-primary ml-2" data-disable-with="Please wait...">
       </div>
 </form>  </div>
