@@ -51,7 +51,15 @@ def app(request):
         print(t )
     # count = Article.objects.filter().count()
     return render(request, 'app/app.html',{'title':titles})
- 
+
+def app1(request):
+    # titles = MainArticle.objects.all()
+    titles = MainArticle.objects.annotate(section_count=Count('article'))
+    for t in titles:
+        print(t )
+    # count = Article.objects.filter().count()
+    return render(request, 'app/app1.html',{'title':titles})
+
 
 def newsection(request):
     if request.method == 'POST':
@@ -62,7 +70,19 @@ def newsection(request):
         obj.icons = section_icon
         obj.save()
         print(section_title, section_icon)
-        return render(request, 'app/app.html')
+        return redirect('app')
+    return render(request, 'app/new.html')
+
+def newsection1(request):
+    if request.method == 'POST':
+        obj = MainArticle()
+        section_title = request.POST.get('section[name]')
+        section_icon = request.POST.get('section[thumbnail_icon_name]')
+        obj.title = section_title
+        obj.icons = section_icon
+        obj.save()
+        print(section_title, section_icon)
+        return redirect('app')
     return render(request, 'app/new1.html')
 
 

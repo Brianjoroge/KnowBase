@@ -14,7 +14,10 @@ urlpatterns = [
     path('contactus', views.contactus, name='contactus'),
 
     path('new', views.newuser, name='newuser'),
+    
     path('section/new', views.newsection, name='newsection'),
+    path('section/new1', views.newsection1, name='newsection1'),
+
     path('section/<int:id>/details', views.details, name='details'),
     path('section/edit', views.editsection, name='editsection'),
     
@@ -27,6 +30,7 @@ urlpatterns = [
     path('app/article/<int:id>', views.view_article, name='view_article'),
     
     path('app', views.app, name='app'),
+    path('app1', views.app1, name='app1'),
     path('app/customization', views.customization, name='customization'),
     path('app/customization/general', views.general, name='general'),
     

@@ -5161,8 +5161,8 @@ Page Title Area CSS
   background-color: #7044FB;
   position: relative;
   z-index: 1;
-  padding-top: 130px;
-  padding-bottom: 120px;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .page-title-area::before {

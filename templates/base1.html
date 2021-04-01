@@ -1,12 +1,19 @@
 {% load static %}
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="ar" >
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="{% static 'css/ionicons.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/classic.min.css' %}"/>
+    <script src="{% static 'js/clipboard.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/notiflix-1.9.1.css' %}"/>
+    <script src="{% static 'js/notiflix-1.9.1.js' %}"></script>
 
+
+    <link rel="stylesheet" media="all" href="{% static 'css/application-d8fa5ad3edcf1abf593a1b568a1988cb7041be0975122112fbca88b295516260.css' %}"/>
 
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.rtl.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
@@ -24,7 +31,56 @@
     <title>{% block title %} KnowBase - Best Knowledge Base in the market{% endblock %}</title>
     <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
 
+    
+<script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
 
+{#<script src="{% static '' %}/js/popper.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/bootstrap.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/jquery.magnific-popup.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/jquery.appear.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/odometer.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/owl.carousel.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/jquery.meanmenu.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/wow.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/conversation.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/jquery.ajaxchimp.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/form-validator.min.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/contact-form-script.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/particles.min.js"></script>#}
+{#<script src="{% static '' %}/js/coustom-particles.js"></script>#}
+{##}
+{#<script src="{% static '' %}/js/main.js"></script>#}
+
+<script src="{% static 'js/application-c02f93572ed3a04db16b.js' %}"></script>
+<script src="{% static 'js/e386e9e568.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
+<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/conversation.js' %}"></script>
+<script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+<script src="{% static 'assets/js/particles.min.js' %}"></script>
+<script src="{% static 'assets/js/coustom-particles.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
 </head>
 <body>
 
@@ -108,52 +164,5 @@
 
 <div class="go-top"><i class='bx bx-chevron-up'></i></div>
 
-<script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-
-{#<script src="{% static '' %}/js/popper.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/bootstrap.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.magnific-popup.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.appear.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/odometer.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/owl.carousel.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.meanmenu.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/wow.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/conversation.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.ajaxchimp.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/form-validator.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/contact-form-script.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/particles.min.js"></script>#}
-{#<script src="{% static '' %}/js/coustom-particles.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/main.js"></script>#}
-
-<script src="{% static 'assets/js/popper.min.js' %}"></script>
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
-<script src="{% static 'assets/js/odometer.min.js' %}"></script>
-<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
-<script src="{% static 'assets/js/wow.min.js' %}"></script>
-<script src="{% static 'assets/js/conversation.js' %}"></script>
-<script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
-<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
-<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
-<script src="{% static 'assets/js/particles.min.js' %}"></script>
-<script src="{% static 'assets/js/coustom-particles.js' %}"></script>
-<script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 </html>
