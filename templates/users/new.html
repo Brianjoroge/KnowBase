@@ -6,37 +6,62 @@
     <div class="toast-container">
 </div>
 
-      <nav class="navbar bg-white navbar-default navbar-simple">
+      {% comment %} <nav class="navbar bg-white navbar-default navbar-simple">
   <div class="container">
     <a class="navbar-brand mx-auto" href="{% url 'index' %}">
       <img class="navbar-logo" src="{% static 'images/logo.png' %}" />
 </a>  </div>
 </nav>
+ {% endcomment %}
 
-  <div class="container mt-4">
-    <div class="row">
-  <div class="col-12">
-    <h4 class="text-center my-4">Forgot your password?</h4>
-    <form class="form-devise" id="new_user" action="#" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="NxsM6ZHFo1ZcvVBZH9hAo8RAgPmR+DcwteKfMAFNdXQk120cPxmF4Kka4/D6i774/DAVfJ2lbzO5MY5Zh/KUOg==" />
+
+
+
+<section class="login-area">
+<div class="row m-0">
+<div class="col-lg-6 col-md-12 p-0">
+<div class="login-image">
+<img src="assets/img/login-bg.jpg" alt="image">
+</div>
+</div>
+<div class="col-lg-6 col-md-12 p-0">
+<div class="login-content">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="login-form">
+<div class="logo">
+      <a class="navbar-brand mx-auto" href="{% url 'index' %}">
+        <img class="navbar-logo" src="{% static 'images/logo.png' %}" width="50%" />
+      </a>
+</div>
+<h4>Forgot your password?</h4>
+{% comment %} <p>New to Strax? <a href="sign-up.html">Sign up</a></p> {% endcomment %}
+
+  <form class="form-devise" id="new_user" action="#" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="NxsM6ZHFo1ZcvVBZH9hAo8RAgPmR+DcwteKfMAFNdXQk120cPxmF4Kka4/D6i774/DAVfJ2lbzO5MY5Zh/KUOg==" />
       <fieldset class="form-group">
-        <label for="user_email">Email</label>
-        <input placeholder="Enter your email address" class="form-control" autofocus="autofocus" required="required" type="email" name="user[email]" id="user_email" />
+        {% comment %} <label for="user_email">Email</label> {% endcomment %}
+        <input placeholder="Enter your email address" class="form-control"  required="required" type="email" name="user[email]" id="user_email" />
       </fieldset>
-      <input type="submit" name="commit" value="Send Password Reset Instructions" class="btn btn-block btn-primary mt-4" data-disable-with="Send Password Reset Instructions" />
+      <input type="submit" name="commit" value="Send Password Reset Instructions" class="default-btn" data-disable-with="Send Password Reset Instructions" />
       <div class="shared-links my-4 text-center">
-    Already have an account? <a href="{% url 'signin' %}">Sign in</a><br />
 
-    Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a><br />
-
-
+    <p> Already have an account? <a href="{% url 'signin' %}">Sign in</a> </p>
+    <p> Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a> </p>
 
 
 </div>
 
-</form>  </div>
-</div>
+</form>  
 
-  </div>
+      
+</div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</section>
+
 
   </body>
 

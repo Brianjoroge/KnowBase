@@ -1,17 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http.response import JsonResponse,HttpResponse
 from .forms import ArticleForm, CommentForm
-import openai
+# import openai
 from .models import Article, MainArticle
 from django.db.models import Count
 from django.conf import settings # new
 from django.views.decorators.csrf import csrf_exempt 
-import stripe
+# import stripe
 from django.views.generic import TemplateView
 
 
 
-openai.api_key = "sk-exLmhJVVMDqkAu4qyQ6n8syqwwyLA9IxJomrr5P0"
+# openai.api_key = "sk-exLmhJVVMDqkAu4qyQ6n8syqwwyLA9IxJomrr5P0"
 
 def newarticle(request):
     context=dict()
@@ -40,6 +40,9 @@ def newarticle(request):
 def newuser(request):
     return render(request, 'users/new.html')
 
+def contactus(request):
+    return render(request, 'app/contact1.html')
+
 
 def app(request):
     # titles = MainArticle.objects.all()
@@ -60,7 +63,7 @@ def newsection(request):
         obj.save()
         print(section_title, section_icon)
         return render(request, 'app/app.html')
-    return render(request, 'app/new.html')
+    return render(request, 'app/new1.html')
 
 
 

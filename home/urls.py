@@ -6,12 +6,13 @@ from . import views
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="index.html"), name='index'),
+    path('', TemplateView.as_view(template_name="index1.html"), name='index'),
 
     path('signup', signup, name='signup'),
     
     path('signin', signin, name='signin'),
-    
+    path('contactus', views.contactus, name='contactus'),
+
     path('new', views.newuser, name='newuser'),
     path('section/new', views.newsection, name='newsection'),
     path('section/<int:id>/details', views.details, name='details'),

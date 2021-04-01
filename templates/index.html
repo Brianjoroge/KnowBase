@@ -1,16 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+
     <body class="main main-index object">
+
+
+<div class="preloader-area">
+<div class="spinner">
+<div class="inner">
+<div class="disc"></div>
+<div class="disc"></div>
+<div class="disc"></div>
+</div>
+</div>
+</div>
+
+
+{% include  'web_navbar.html' %}
 
 <div class="toast-container">
 </div>
 
-<nav class="navbar navbar-expand-lg sticky-top navbar-main bg-white">
+{% comment %} <nav class="navbar navbar-expand-lg sticky-top navbar-main bg-white">
     <div class="container">
         <a class="navbar-brand" href="{% url 'index' %}">
-            <img class="navbar-logo"
-                 src="{% static 'images/logo.png' %}"/>
+            <img class="navbar-logo" src="{% static 'images/logo.png' %}"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
@@ -29,138 +44,137 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> {% endcomment %}
 
-
-<div class="container-fluid hero">
-
-    <div class="container h-100 my-5 py-3">
-        <div class="row h-100">
-            <div class="col text-center">
-                <div class="hero-header mb-4">Your new knowledge base <span class="text-primary">writes itself.</span>
-                </div>
-                <div class="mb-4 pb-2" style="font-size: 20px;">KnowBase is the <span
-                        class="font-weight-semibold">only</span> knowledge base that <span class="font-weight-semibold">generates original content</span>
-                    for you <span class="font-weight-semibold">instantly</span> with AI GPT3 Model.
-                </div>
-
-                <!-- <div class="mb-4 pb-2" style="font-size: 20px;">KnowBase is an <span class="font-weight-semibold">affordable</span>, <span class="font-weight-semibold">hosted</span> knowledge base that looks great and just works right out of the box.</div> -->
-                <div class="w-100">
-                    <div class="d-lg-inline-block">
-                        <a class="btn btn-primary btn-lg btn-md-block" style="min-width: 250px;"
-                           data-tracking-id="get-started-hero-cta" href="users/sign_up.html">Get Started For Free</a>
-                        <div class="text-muted text-center mt-2"><span class="mr-3">🎉</span>No credit card required!
-                        </div>
-                    </div>
-                </div>
+<div class="main-banner main-banner-one">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-lg-7 col-md-12">
+            <div class="main-banner-content">
+               <div class="d-table">
+                  <div class="d-table-cell">
+                     <div class="content">
+                        <h1>Your new knowledge base writes itself.</h1>
+                        <p>KnowBase is the only knowledge base that generates original content for you instantly with AI GPT3 Model.</p>
+                        <a href="{% url 'signup' %}" class="default-btn">
+                        <i class="bx bxs-hot"></i>Get Started for free<span style="top: -1.40002px; left: 22.3125px;"></span>
+                        </a>
+                        <p><span class="mr-3">🎉</span>No credit card required!</p>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div style="max-width: 800px;" class="mx-auto">
-
-                     <iframe  id="article-writer-demo-video" height="450" width="100%" frameborder="0"
-                           class="d-block" style="margin-top: 40px; border-radius: 7px; border: 1px solid black; box-shadow: 10px 10px 0 0 #7044FB; outline: none;"
-src="https://www.youtube.com/embed/a5LMozhAeUg">
-</iframe>
-                </div>
+         </div>
+         <div class="col-lg-5 col-md-12">
+            <div class="banner-image mbanner-bg-one">
+               <div class="d-table">
+                  <div class="d-table-cell">
+                     <div class="animate-banner-image">
+                        <img src="{% static 'assets/img/animate-banner-img1.jpg' %}" alt="image">
+                     </div>
+                  </div>
+               </div>
+               <img src="{% static 'assets/img/banner-slider/banner-img1.jpg' %}" class="mbanner-img" alt="image">
             </div>
-        </div>
-
-    </div>
+         </div>
+      </div>
+   </div>
+   <div class="shape20"><img src="{% static 'assets/img/shape/19.png' %}" alt="image"></div>
+   <div class="shape21"><img src="{% static 'assets/img/shape/20.png' %}" alt="image"></div>
+   <div class="shape19"><img src="{% static 'assets/img/shape/18.png' %}" alt="image"></div>
+   <div class="shape22"><img src="{% static 'assets/img/shape/21.png' %}" alt="image"></div>
+   <div class="shape23"><img src="{% static 'assets/img/shape/22.svg' %}" alt="image"></div>
+   <div class="shape24"><img src="{% static 'assets/img/shape/23.png' %}" alt="image"></div>
+   <div class="shape26"><img src="{% static 'assets/img/shape/25.png' %}" alt="image"></div>
 </div>
 
-<div class="container-fluid py-1" style="background-color: #f9f9f9;">
-    <div class="container">
-        <div class="row my-4 text-center">
-            <div class="col-md-4 my-4">
-                <div class="mx-auto mb-4 d-flex align-items-center justify-content-center"
-                     style="background-color: white; border-radius: 5px; border: 1px solid black; width: 50px; height: 50px; box-shadow: 4px 4px 0 0 #7044FB;">
-                    <div style="font-size: 2.2rem; font-weight: 600; line-height: 2.2rem;">1</div>
-                </div>
-                <div class="h4">Give your article a title</div>
-                <div class="">Something short and descriptive works best. The AI uses this as the foundation of each
-                    article.
-                </div>
+
+
+<section class="video-presentation-area ptb-100">
+   <div class="container">
+      <div class="section-title">
+         <h2>Why choose us to watch this video know more</h2>
+      </div>
+      <div class="video-box">
+         
+        <iframe  id="article-writer-demo-video" height="450" width="100%" frameborder="0"
+            class="d-block" style="margin-top: 40px; border-radius: 7px; border: 1px solid black; box-shadow: 10px 10px 0 0 #7044FB; outline: none;" src="https://www.youtube.com/embed/a5LMozhAeUg"> </iframe>
+            
+         {% comment %} <a href="https://www.youtube.com/embed/a5LMozhAeUg" class="video-btn popup-youtube"> {% endcomment %}
+
+         <i class="bx bx-play"></i>
+         </a>
+         <div class="shape1"><img src="{% static 'assets/img/shape/1.png' %}" alt="image"></div>
+         <div class="shape2"><img src="{% static 'assets/img/shape/2.png' %}" alt="image"></div>
+         <div class="shape3"><img src="{% static 'assets/img/shape/3.png' %}" alt="image"></div>
+         <div class="shape4"><img src="{% static 'assets/img/shape/4.png' %}" alt="image"></div>
+         <div class="shape5"><img src="{% static 'assets/img/shape/5.png' %}" alt="image"></div>
+         <div class="shape6"><img src="{% static 'assets/img/shape/6.png' %}" alt="image"></div>
+      </div>
+   </div>
+</section>
+
+
+<div class="features-card-section pt-100 pb-70 bg-f8fbfa">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <div class="single-features-card tx-center h-100">
+               <i class="bx bx-conversation"></i>
+               <h3>
+                  <a href="javascript:void(0)">Give your article a title</a>
+               </h3>
+               <p>Something short and descriptive works best. The AI uses this as the foundation of each article.</p>
             </div>
-            <div class="col-md-4 my-4">
-                <div class="mx-auto mb-4 d-flex align-items-center justify-content-center"
-                     style="background-color: white; border-radius: 5px; border: 1px solid black; width: 50px; height: 50px; box-shadow: 4px 4px 0 0 #7044FB;">
-                    <div style="font-size: 2.2rem; font-weight: 600; line-height: 2.2rem;">2</div>
-                </div>
-                <div class="h4">Write a few bullet points</div>
-                <div class="">Summarize what you want your article to say. KnowBase will instantly compose original
-                    content that covers your key points.
-                </div>
+         </div>
+         <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+            <div class="single-features-card tx-center h-100">
+               <i class="bx bx-laptop"></i>
+               <h3>
+                  <a href="javascript:void(0)">Write a few bullet points</a>
+               </h3>
+               <p>Summarize what you want your article to say. KnowBase will instantly compose original content that covers your key points.</p>
             </div>
-            <div class="col-md-4 my-4">
-                <div class="mx-auto mb-4 d-flex align-items-center justify-content-center"
-                     style="background-color: white; border-radius: 5px; border: 1px solid black; width: 50px; height: 50px; box-shadow: 4px 4px 0 0 #7044FB;">
-                    <div style="font-size: 2.2rem; font-weight: 600; line-height: 2.2rem;">3</div>
-                </div>
-                <div class="h4">Relax</div>
-                <div class="">Edit your newly generated article if needed, and take it easy – you're done!</div>
+         </div>
+         <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+            <div class="single-features-card tx-center h-100">
+               <i class="bx bxs-badge-check"></i>
+               <h3>
+                  <a href="javascript:void(0)">Relax</a>
+               </h3>
+               <p>Edit your newly generated article if needed, and take it easy – you're done!</p>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </div>
 
-<!--
-<div class="container-fluid py-1" style="background-color: #f9f9f9;">
-  <div class="container">
-    <div class="row my-4 text-center">
-      <div class="col-md-4 my-4">
-        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="background-color: white; border-radius: 5px; border: 1px solid black; width: 50px; height: 50px; box-shadow: 4px 4px 0 0 #7044FB;">
-          <div style="font-size: 2.2rem; font-weight: 600; line-height: 2.2rem;">1</div>
-        </div>
-        <div class="h4">Affordable</div>
-        <div class="">The most affordable knowledgebase – less than half the cost of our leading competitor.</div>
-      </div>
-      <div class="col-md-4 my-4">
-        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="background-color: white; border-radius: 5px; border: 1px solid black; width: 50px; height: 50px; box-shadow: 4px 4px 0 0 #7044FB;">
-          <div style="font-size: 2.2rem; font-weight: 600; line-height: 2.2rem;">2</div>
-        </div>
-        <div class="h4">Simple</div>
-        <div class="">We do one thing and do it well. A fully-featured knowledgebase that's also super simple — that's KnowBase.</div>
-      </div>
-      <div class="col-md-4 my-4">
-        <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="background-color: white; border-radius: 5px; border: 1px solid black; width: 50px; height: 50px; box-shadow: 4px 4px 0 0 #7044FB;">
-          <div style="font-size: 2.2rem; font-weight: 600; line-height: 2.2rem;">3</div>
-        </div>
-        <div class="h4">Beautiful</div>
-        <div class="">Most knowledge bases are ugly – you know it's true. KnowBase is designed to be beautiful, just like you.</div>
-      </div>
-    </div>
-  </div>
-</div> -->
 
-<!-- <hr> -->
-<div class="container-fluid">
-    <div class="container" style="padding-top: 40px; padding-bottom: 80px;">
-        <div class="row mb-5">
-            <div class="col">
-                <div class="h2 text-center">Hear what customers have to say</div>
+<section class="feedback-area pt-100 pb-70">
+   <div class="container">
+      <div class="section-title">
+         <h2>Hear what customers have to say</h2>
+      </div>
+      <div class="feedback-slides">
+        <div class="single-feedback-item col-sm-8 m-auto d-table">
+            <div class="feedback-desc">
+            <p>KnowBase is the new Nostradamus. What more can I say? Amazing!!!</p>
+            <div class="rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+            </div>
+            <div class="client-info">
+                <h3>John Doe</h3>
+                <span>Chair of the Nostradamus Society</span>
+            </div>
             </div>
         </div>
-        <div class="p-5 mx-auto"
-             style="background-color: white; border-radius: 7px; border: 1px solid black; max-width: 700px; box-shadow: 10px 10px 0 0 #7044FB;">
-            <div class="mb-4" style="font-size: 19px; ">
-                KnowBase is the new Nostradamus. What more can I say? Amazing!!!
-            </div>
-            <div class="text-muted">
-                <div class="media">
-                    <img class="mr-3" style="border-radius: 100px; height: 50px;"
-                         src="{% static 'images/user.png' %}"/>
-                    <div class="media-body">
-                        John Doe<br>
-                        Chair of the Nostradamus Society
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+      </div>
+   </div>
+</section>
 
 <div class="container-fluid bg-primary text-white py-5">
     <div class="container text-center">
@@ -176,165 +190,57 @@ src="https://www.youtube.com/embed/a5LMozhAeUg">
     </div>
 </div>
 
-
-<div id="features" style="display: block; position: relative; top: -60px; visibility: hidden;"></div>
-<div class="container-fluid py-5" style="color: #fff; background-color: #212529;">
-    <div class="container pt-3">
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="h1">Features</div>
-                <div class="my-2 text-center">
-                    <div class="row">
-                        <div class="col p-4">
-                            <i class="icon ion-ios-people" style="font-size: 50px;"></i>
-                            <div class="h4 mt-2">Flat Rate Pricing</div>
-                            <div class="gray-500">Invite unlimited team members to collaborate on your site for one low
-                                flat rate.
-                            </div>
-                        </div>
-
-{#                        <!-- display only at xs -->#}
-{#                        <div class="w-100 d-none d-block d-sm-none"></div>#}
-{##}
-{#                        <div class="col p-4">#}
-{#                            <i class="icon ion-ios-pulse" style="font-size: 50px;"></i>#}
-{#                            <div class="h4 mt-2">Analytics</div>#}
-{#                            <div class="gray-500">Track article views, traffic to your site, user search queries, and#}
-{#                                other key metrics.#}
-{#                            </div>#}
-{#                        </div>#}
-
-                        <!-- display at sm and md -->
-                        <div class="w-100 d-none d-sm-block d-lg-none"></div>
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-
-                        <div class="col p-4">
-                            <i class="icon ion-ios-construct" style="font-size: 50px;"></i>
-                            <div class="h4 mt-2">Easy Editor</div>
-                            <div class="gray-500">Build simple, beautiful articles with our easy to use, drag-and-drop
-                                editor.
-                            </div>
-                        </div>
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-
-{#                        <div class="col p-4">#}
-{#                            <i class="icon ion-ios-chatboxes" style="font-size: 50px;"></i>#}
-{#                            <div class="h4 mt-2">Customizable</div>#}
-{#                            <div class="gray-500">Add your logo & favicon, change your color scheme, and even use your#}
-{#                                own domain name.#}
-{#                            </div>#}
-{#                        </div>#}
-
-                        <!-- display at sm and md -->
-                        <div class="w-100 d-none d-sm-block d-lg-none"></div>
-
-                        <!-- display at lg and xl -->
-                        <div class="w-100 d-none d-lg-block"></div>
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-
-                        <div class="col p-4">
-                            <i class="icon ion-ios-add-circle-outline" style="font-size: 50px;"></i>
-                            <div class="h4 mt-2">Quick Setup</div>
-                            <div class="gray-500">Set up your site in 10 minutes, write a few articles, and you're
-                                done.
-                            </div>
-                        </div>
-
-                        <!-- display only at xs -->
-{#                        <div class="w-100 d-none d-block d-sm-none"></div>#}
-{##}
-{#                        <div class="col p-4">#}
-{#                            <i class="icon ion-ios-color-filter" style="font-size: 50px;"></i>#}
-{#                            <div class="h4 mt-2">Custom Domain</div>#}
-{#                            <div class="gray-500">Use a permanent subdomain of KnowBase.io or add your own domain.</div>#}
-{#                        </div>#}
-
-                        <!-- display at sm and md -->
-                        <div class="w-100 d-none d-sm-block d-lg-none"></div>
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-{##}
-{#                        <div class="col p-4">#}
-{#                            <i class="icon ion-ios-log-in" style="font-size: 50px;"></i>#}
-{#                            <div class="h4 mt-2">Effortless Migration</div>#}
-{#                            <div class="gray-500">Copy and paste articles from your old knowledge base into ours.</div>#}
-{#                        </div>#}
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-
-                        <div class="col p-4">
-                            <i class="icon ion-ios-happy" style="font-size: 50px;"></i>
-                            <div class="h4 mt-2">User Feedback</div>
-                            <div class="gray-500">Users can vote on each article's helpfullness, while you track it all
-                                from your dashboard.
-                            </div>
-                        </div>
-
-                        <!-- display at sm and md -->
-                        <div class="w-100 d-none d-sm-block d-lg-none"></div>
-
-                        <!-- display at lg and xl -->
-                        <div class="w-100 d-none d-lg-block"></div>
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-
-                        <div class="col p-4">
-                            <i class="icon ion-ios-search" style="font-size: 50px;"></i>
-                            <div class="h4 mt-2">Instant Search</div>
-                            <div class="gray-500">User can search as they type and get answers fast.</div>
-                        </div>
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-
-
-                        <div class="col p-4">
-                            <i class="icon ion-ios-today" style="font-size: 50px;"></i>
-                            <div class="h4 mt-2">Themes</div>
-                            <div class="gray-500">Choose from our classic knowledge base or documentation themes.</div>
-                        </div>
-
-                        <!-- display at sm and md -->
-                        <div class="w-100 d-none d-sm-block d-lg-none"></div>
-
-                        <!-- display only at xs -->
-                        <div class="w-100 d-none d-block d-sm-none"></div>
-
-
-{#                        <div class="col p-4">#}
-{#                            <i class="icon ion-ios-hand" style="font-size: 50px;"></i>#}
-{#                            <div class="h4 mt-2">Private Sites</div>#}
-{#                            <div class="gray-500">Flip a switch and make your site private from search engines and#}
-{#                                bots.#}
-{#                            </div>#}
-{#                        </div>#}
-
-{#                        <!-- display only at xs -->#}
-{#                        <div class="w-100 d-none d-block d-sm-none"></div>#}
-{##}
-{##}
-{#                        <div class="col p-4">#}
-{#                            <i class="icon ion-ios-code" style="font-size: 50px;"></i>#}
-{#                            <div class="h4 mt-2">Code Blocks</div>#}
-{#                            <div class="gray-500">Automatic syntax highlighting for code snippets.</div>#}
-{#                        </div>#}
-
-
-                    </div>
-                </div>
+<section class="features-area pt-100 pb-70 bg-f4f6fc" id="features">
+   <div class="container">
+      <div class="section-title">
+         <h2>Our amazing features</h2>
+      </div>
+      <div class="row">
+         <div class="col-lg-4 col-md-6">
+            <div class="features-box-one wow fadeInLeft" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+               <i class="icon ion-ios-people"></i>
+               <h3>Flat Rate Pricing</h3>
+               <p>Invite unlimited team members to collaborate on your site for one low flat rate.</p>
             </div>
-        </div>
-    </div>
-</div>
+         </div>
+         <div class="col-lg-4 col-md-6">
+            <div class="features-box-one wow fadeInLeft" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+               <i class="icon ion-ios-construct"></i>
+               <h3>Easy Editor</h3>
+               <p>Build simple, beautiful articles with our easy to use, drag-and-drop editor.</p>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-6">
+            <div class="features-box-one wow fadeInLeft" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInRight;">
+               <i class="icon ion-ios-add-circle-outline"></i>
+               <h3>Quick Setup</h3>
+               <p>Set up your site in 10 minutes, write a few articles, and you're done.</p>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-6">
+            <div class="features-box-one wow fadeInLeft" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;">
+               <i class="icon ion-ios-happy"></i>
+               <h3>User Feedback</h3>
+               <p>Users can vote on each article's helpfullness, while you track it all from your dashboard.</p>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-6">
+            <div class="features-box-one wow fadeInLeft" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+               <i class="icon ion-ios-search"></i>
+               <h3>Instant Search</h3>
+               <p>User can search as they type and get answers fast.</p>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-6">
+            <div class="features-box-one wow fadeInLeft" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
+               <i class="icon ion-ios-today"></i>
+               <h3>Themes</h3>
+               <p>Choose from our classic knowledge base or documentation themes.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 
 <div id="pricing" style="display: block; position: relative; top: -40px; visibility: hidden;"></div>
 <div class="container-fluid my-5">
@@ -358,8 +264,7 @@ src="https://www.youtube.com/embed/a5LMozhAeUg">
             </div>
 
 
-            <div class="card mx-2 mb-4 border-primary plan-card plan-card-annual d-none"
-                 style="width: 18rem; display: inline-block;">
+            <div class="card mb-4 border-primary plan-card plan-card-annual d-none col-3 d-table-c m-auto">
                 <div class="card-body">
                     <img height="30px;" class="mt-3 mb-4"
                          src="{% static 'images/logo.png' %}"/>
@@ -383,8 +288,7 @@ src="https://www.youtube.com/embed/a5LMozhAeUg">
                 </div>
             </div>
 
-            <div class="card mx-2 mb-4 border-primary plan-card plan-card-monthly d-none"
-                 style="width: 18rem; display: inline-block;">
+            <div class="card mb-4 border-primary plan-card plan-card-monthly d-table-c d-none col-sm-3 m-auto">
                 <div class="card-body">
                     <img height="30px;" class="mt-3 mb-4"
                          src="{% static 'images/logo.png' %}"/>
@@ -415,7 +319,53 @@ src="https://www.youtube.com/embed/a5LMozhAeUg">
     </div>
 </div>
 
-<div class="container-fluid footer text-white" style="background-color: #212529;">
+
+<footer class="footer-area">
+   <div class="divider"></div>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+               <div class="logo">
+                  <a href="index.html"><img style="width: 70%;" src="{% static 'images/logo.png' %}"/></a>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+               <h3>Company</h3>
+               <ul class="services-list">
+                  <li><a href="about.html">Home</a></li>
+                  <li><a href="services-1.html">Pricing</a></li>
+                  <li><a href="features-1.html">Help</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+               <h3>Legal</h3>
+               <ul class="support-list">
+                  <li><a href="faq.html">Terms of Use</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+               <h3>Contact</h3>
+               <ul class="footer-contact-info">
+                  <li><a href="#">Contact Support</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="copyright-area">
+         <p>© 2021 KNOWBASE • MADE IN CAIRO</p>
+      </div>
+   </div>
+</footer>
+
+{% comment %} <div class="container-fluid footer text-white" style="background-color: #212529;">
     <div class="container pt-5 pb-4">
         <div class="row py-4">
             <div class="col-md-4">
@@ -457,7 +407,7 @@ src="https://www.youtube.com/embed/a5LMozhAeUg">
             </div>
         </div>
     </div>
-</div>
+</div> {% endcomment %}
 
 
 <script>

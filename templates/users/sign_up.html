@@ -24,57 +24,76 @@
 
   </div>
 
-  <nav class="navbar bg-white navbar-default navbar-simple">
+  {% comment %} <nav class="navbar bg-white navbar-default navbar-simple">
     <div class="container">
       <a class="navbar-brand mx-auto" href="{% url 'index' %}">
         <img class="navbar-logo" src="{% static 'images/logo.png' %}" />
       </a>
     </div>
-  </nav>
+  </nav> {% endcomment %}
 
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-12">
-        <div class="h4 text-center my-4">
-          Start your 14 Day Free Trial
-        </div>
-        <form class="form-devise" id="new_user" action="{% url 'signup' %}" accept-charset="UTF-8" method="post">
+
+
+
+<section class="signup-area">
+<div class="row m-0">
+<div class="col-lg-6 col-md-12 p-0">
+<div class="signup-image">
+<img src="assets/img/signup-bg.jpg" alt="image">
+</div>
+</div>
+<div class="col-lg-6 col-md-12 p-0">
+<div class="signup-content">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="signup-form">
+<div class="logo">
+      <a class="navbar-brand mx-auto" href="{% url 'index' %}">
+        <img class="navbar-logo" src="{% static 'images/logo.png' %}" width="50%" />
+      </a>
+</div>
+<h4>Start your 14 Day Free Trial</h4>
+
+   <form class="form-devise" id="new_user" action="{% url 'signup' %}" accept-charset="UTF-8" method="post">
           {% csrf_token %}
           <input type="hidden" name="authenticity_token"
             value="85TwswF5Eu0cStN5ya2hbqtThExAmE6qfstgzvAm0pdNc9QwMmRZ2DX37AvgJi718wMcYK6OQqOJzwGIEJWMWw==" />
           <fieldset class="form-group">
-            <label for="user_email">Email</label>
-            <input placeholder="Enter your email address" class="form-control" autofocus="autofocus" required="required"
+            {% comment %} <label for="user_email">Email</label> {% endcomment %}
+            <input placeholder="Enter your email address" class="form-control" required="required"
               type="email" name="username" id="user_email" />
           </fieldset>
           <fieldset class="form-group">
-            <label for="user_password">Password</label>
+            {% comment %} <label for="user_password">Password</label> {% endcomment %}
             <input placeholder="Choose a password" class="form-control" required="required" type="password"
               name="password" id="user_password" />
           </fieldset>
           <fieldset class="form-group">
-            <label for="user_password_confirmation">Password Confirmation</label>
+            {% comment %} <label for="user_password_confirmation">Password Confirmation</label> {% endcomment %}
             <input placeholder="Type your password again" class="form-control" required="required" type="password"
               name="confirm_password" id="user_password_confirmation" />
           </fieldset>
-          <input type="submit" name="commit" value="Start Free Trial" class="btn btn-block btn-primary mt-4"
+          <input type="submit" name="commit" value="Start Free Trial" class="default-btn"
             data-disable-with="Start Free Trial" />
           <div class="text-muted text-center mt-3"><span class="mr-3">🎉</span>No credit card required!</div>
           <div class="shared-links my-4 text-center">
-            Already have an account? <a href="{% url 'signin' %}">Sign in</a><br />
+            
+            <p> Already have an account? <a href="{% url 'signin' %}">Sign in</a></p>
 
-
-            <a href="{% url 'newuser' %}">Forgot your password?</a><br />
-
-
+            <p><a href="{% url 'newuser' %}">Forgot your password?</a></p>
 
           </div>
 
         </form>
-      </div>
-    </div>
 
-  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ </div>
+</section>
+
 
 </body>
 {% endblock %}

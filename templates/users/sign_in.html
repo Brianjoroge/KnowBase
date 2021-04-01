@@ -23,7 +23,7 @@
 
 {% endif %}
 
-  <nav class="navbar bg-white navbar-default navbar-simple">
+  {% comment %} <nav class="navbar bg-white navbar-default navbar-simple">
     <div class="container">
       <a class="navbar-brand mx-auto" href="{% url 'index' %}">
         <img class="navbar-logo" src="{% static 'images/logo.png' %}" />
@@ -31,40 +31,66 @@
     </div>
   </nav>
 
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-12">
-        <h4 class="text-center my-4">Welcome back!</h4>
-        <form class="form-devise" id="new_user" action="{% url 'signin' %}" accept-charset="UTF-8" method="post">
-
-          {% csrf_token %}
-          <fieldset class="form-group">
-            <label for="user_email">Email</label>
-            <input placeholder="Enter your email address" class="form-control" autofocus="autofocus" required="required"
-              type="email" name='user_name' id="user_email" />
-          </fieldset>
-          <fieldset class="form-group">
-            <label for="user_password">Password</label>
-            <input placeholder="•••••••••••••" class="form-control" required="required" type="password" name='password'
-              id="user_password" />
-          </fieldset>
-          <input type="submit" name="commit" value="Sign In" class="btn btn-block btn-primary mt-4"
-            data-disable-with="Sign In" />
-          <div class="shared-links my-4 text-center">
-
-            Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a><br />
-
-            <a href="{% url 'newuser' %}">Forgot your password?</a><br />
+ {% endcomment %}
 
 
+<section class="login-area">
+<div class="row m-0">
+<div class="col-lg-6 col-md-12 p-0">
+<div class="login-image">
+<img src="assets/img/login-bg.jpg" alt="image">
+</div>
+</div>
+<div class="col-lg-6 col-md-12 p-0">
+<div class="login-content">
+<div class="d-table">
+<div class="d-table-cell">
+<div class="login-form">
+<div class="logo">
+      <a class="navbar-brand mx-auto" href="{% url 'index' %}">
+        <img class="navbar-logo" src="{% static 'images/logo.png' %}" width="50%" />
+      </a>
+</div>
+<h4>Welcome back</h4>
+{% comment %} <p>New to Strax? <a href="sign-up.html">Sign up</a></p> {% endcomment %}
 
-          </div>
 
-        </form>
-      </div>
-    </div>
+   <form class="form-devise" id="new_user" action="{% url 'signin' %}" accept-charset="UTF-8" method="post">
 
-  </div>
+        {% csrf_token %}
+        <fieldset class="form-group">
+          {% comment %} <label for="user_email">Email</label> {% endcomment %}
+          <input placeholder="Enter your email address" class="form-control" required="required"
+            type="email" name='user_name' id="user_email" />
+        </fieldset>
+        <fieldset class="form-group">
+          {% comment %} <label for="user_password">Password</label> {% endcomment %}
+          <input placeholder="•••••••••••••" class="form-control" required="required" type="password" name='password'
+            id="user_password" />
+        </fieldset>
+        <input type="submit" name="commit" value="Sign In" class="default-btn"
+          data-disable-with="Sign In" />
+        <div class="shared-links my-4 text-center">
+
+          <p> Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a> </p>
+
+        <p> <a href="{% url 'newuser' %}">Forgot your password?</a> </p>
+
+
+
+        </div>
+
+      </form>
+      
+</div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</section>
+
+
 
 </body>
 
