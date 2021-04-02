@@ -3,24 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="64ffd904-a390-4c4d-95dd-5b3354be1af2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/static/assets/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/assets/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/assets/js/jquery.steps.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/assets/js/jquery.steps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/static/assets/js/main1.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/assets/js/main1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/bootstrap.rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/app1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/app1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/new1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/new1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/new_article.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/new_article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/customization2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/details1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/details1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/web_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/web_navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,18 +41,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/static/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/app" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/knowBase/static/images" />
       <recent name="$PROJECT_DIR$/home/static/assets/css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/home/static/assets/img" />
-      <recent name="$PROJECT_DIR$/knowBase/static/css2" />
+      <recent name="$PROJECT_DIR$/templates/app" />
+      <recent name="$PROJECT_DIR$/knowBase/static/images" />
       <recent name="$PROJECT_DIR$/knowBase/static" />
-      <recent name="$PROJECT_DIR$/home/static/assets/css2" />
-      <recent name="$PROJECT_DIR$/home/static/assets/js2" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/home/static/assets/img" />
     </key>
   </component>
   <component name="RunManager">
@@ -96,7 +93,9 @@
       <updated>1617183142510</updated>
       <workItem from="1617183146609" duration="13804000" />
       <workItem from="1617212308674" duration="2706000" />
-      <workItem from="1617339948496" duration="9566000" />
+      <workItem from="1617339948496" duration="10701000" />
+      <workItem from="1617358963795" duration="6494000" />
+      <workItem from="1617366610058" duration="8649000" />
     </task>
     <servers />
   </component>
@@ -104,9 +103,13 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="458" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1617206425665">
+    <state x="500" y="178" width="589" height="498" key="find.popup" timestamp="1617361363460">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="458" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1617206425665" />
+    <state x="500" y="178" width="589" height="498" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1617361363460" />
+    <state x="458" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1617360993660">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="458" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1617360993660" />
   </component>
 </project>
