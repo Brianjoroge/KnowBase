@@ -19,8 +19,9 @@ urlpatterns = [
     path('section/new1', views.newsection1, name='newsection1'),
 
     path('section/<int:id>/details', views.details, name='details'),
-    path('section/edit', views.editsection, name='editsection'),
-    
+    path('section/<int:id>/edit', views.editsection, name='editsection'),
+    path('section/<int:id>/delete', views.deletesection, name='deletesection'),
+
     path('section/article/new', views.newarticle, name='newarticle'),
     path('section/article/article_writer', views.article_writer, name='article_writer'),
     

@@ -35,7 +35,7 @@ def newarticle(request):
         form = ArticleForm()
 
     context['form'] = form
-    return render(request, 'app/new_article.html',context)
+    return render(request, 'app/new_article1.html',context)
 
 def newuser(request):
     return render(request, 'users/new.html')
@@ -50,7 +50,7 @@ def app(request):
     for t in titles:
         print(t )
     # count = Article.objects.filter().count()
-    return render(request, 'app/app.html',{'title':titles})
+    return render(request, 'app/app1.html',{'title':titles})
 
 def app1(request):
     # titles = MainArticle.objects.all()
@@ -71,7 +71,7 @@ def newsection(request):
         obj.save()
         print(section_title, section_icon)
         return redirect('app')
-    return render(request, 'app/new.html')
+    return render(request, 'app/new1.html')
 
 def newsection1(request):
     if request.method == 'POST':
@@ -93,7 +93,7 @@ def details(request,id):
     
     articles = Article.objects.filter(section__id = id)
     print(articles)
-    return render(request, 'app/details.html',{"articles":articles, "section_details":section_details})
+    return render(request, 'app/details1.html',{"articles":articles, "section_details":section_details})
 
 
 # def newarticle(request):
@@ -176,11 +176,29 @@ article:"""
         })
     return render(request, 'app/new_article.html')
 
-def editsection(request):
-    return render(request, 'app/edit.html')
+def editsection(request,id):
+    obj = MainArticle.objects.get(id=id)
+
+    if request.method == 'POST':
+        obj = MainArticle.objects.get(id=id)
+        section_title = request.POST.get('section[name]')
+        section_icon = request.POST.get('section[thumbnail_icon_name]')
+        obj.title = section_title
+        obj.icons = section_icon
+        obj.save()
+        print(section_title, section_icon)
+        return redirect('app')
+    return render(request, 'app/edit1.html',{"obbj":obj})
+
+def deletesection(request,id):
+    obj = MainArticle.objects.filter(id=id)
+    obj.delete()
+
+
+    return redirect('app')
 
 def customization(request):
-    return render(request, 'app/customization.html')
+    return render(request, 'app/customization2.html')
 
 def general(request):
     return render(request, 'app/general.html')

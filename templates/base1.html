@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="ar" >
+<html lang="ar" dir="ltr">
 <head>
 
     <meta charset="utf-8">
@@ -13,7 +13,8 @@
     <script src="{% static 'js/notiflix-1.9.1.js' %}"></script>
 
 
-    <link rel="stylesheet" media="all" href="{% static 'css/application-d8fa5ad3edcf1abf593a1b568a1988cb7041be0975122112fbca88b295516260.css' %}"/>
+    <link rel="stylesheet" media="all"
+          href="{% static 'css/application-d8fa5ad3edcf1abf593a1b568a1988cb7041be0975122112fbca88b295516260.css' %}"/>
 
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.rtl.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
@@ -31,56 +32,62 @@
     <title>{% block title %} KnowBase - Best Knowledge Base in the market{% endblock %}</title>
     <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
 
-    
-<script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
 
-{#<script src="{% static '' %}/js/popper.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/bootstrap.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.magnific-popup.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.appear.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/odometer.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/owl.carousel.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.meanmenu.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/wow.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/conversation.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/jquery.ajaxchimp.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/form-validator.min.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/contact-form-script.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/particles.min.js"></script>#}
-{#<script src="{% static '' %}/js/coustom-particles.js"></script>#}
-{##}
-{#<script src="{% static '' %}/js/main.js"></script>#}
+    <script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
 
-<script src="{% static 'js/application-c02f93572ed3a04db16b.js' %}"></script>
-<script src="{% static 'js/e386e9e568.js' %}" crossorigin="anonymous"></script>
-<script src="{% static 'assets/js/popper.min.js' %}"></script>
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
-<script src="{% static 'assets/js/odometer.min.js' %}"></script>
-<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
-<script src="{% static 'assets/js/wow.min.js' %}"></script>
-<script src="{% static 'assets/js/conversation.js' %}"></script>
-<script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
-<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
-<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
-<script src="{% static 'assets/js/particles.min.js' %}"></script>
-<script src="{% static 'assets/js/coustom-particles.js' %}"></script>
-<script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script src="{% static 'js/application-c02f93572ed3a04db16b.js' %}"></script>
+    <script src="{% static 'js/e386e9e568.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.meanmenu.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/conversation.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+    <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+    <script src="{% static 'assets/js/particles.min.js' %}"></script>
+    <script src="{% static 'assets/js/coustom-particles.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    {##}
+    {#<!-- include summernote css/js-->#}
+    {#  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.css" rel="stylesheet">#}
+    {#  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.js"></script>#}
+
+
+{#    <link href="{% static 'css/ionicons.min.css' %}" rel="stylesheet">#}
+{##}
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">#}
+{#    <link rel="stylesheet" href="{% static 'assets/css2/style.css' %}">#}
+{#    <script src="{% static 'assets/js2/popper.js' %}"></script>#}
+{#    <script src="{% static 'assets/js2/bootstrap.min.js' %}"></script>#}
+{#    <script src="{% static 'assets/js2/main.js' %}"></script>#}
+{##}
+
+
+
+{#<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+{#<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>#}
+{#<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>#}
+{#<!------ Include the above in your HEAD tag ---------->#}
+{##}
+{#	<!--     Fonts and icons     -->#}
+{#	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />#}
+{#	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />#}
+
+
 </head>
 <body>
 

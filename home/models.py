@@ -20,6 +20,7 @@ class Article(models.Model):
     section = models.ForeignKey(MainArticle,on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     published = models.BooleanField(default=0)
+    image = models.ImageField(upload_to='uploads/')
     update_date = models.DateTimeField(auto_now=True)
     content = RichTextField()
 

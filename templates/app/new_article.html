@@ -5,6 +5,8 @@
   .django-ckeditor-widget{
 width: 100%;
 }</style>
+
+
 <body class="app-articles app-articles-new app">
   <div class="toast-container">
   </div>
@@ -22,32 +24,37 @@ width: 100%;
         <div class="card-body">
 
           <form id="article-form" action="{% url 'newarticle' %}" accept-charset="UTF-8" method="post">
-            <input type="hidden" name="authenticity_token"
-              value="0SmUAqqZe2AamzbD9DJwkQNf5YMNQagNi3EwsQ33KmIgrkjQ03U3BmLvdOSwTG7ykJ1IW+NLOk2pveT4J/STKg==">
             {% csrf_token %}
 
             {{ form.as_p }}
             {{ form.media }}
-            <!-- <div class="form-group">
-              <label for="article_section_id">Section</label>
-              <select class="form-control" name="article[section_id]" id="article_section_id">
-                <option value="">--</option>
-                <option selected="selected" value="1032">describe</option>
-              </select>
-            </div> -->
+{#             <div class="form-group">#}
+{#              <label for="article_section_id">Section</label>#}
+{#              <select class="form-control" name="article[section_id]" id="article_section_id">#}
+{#                <option value="">--</option>#}
+{#                <option selected="selected" value="1032">describe</option>#}
+{#              </select>#}
+{#            </div>#}
+{##}
+{#             <div class="form-group">#}
+{#              <label for="article_title">Title</label>#}
+{#              <input class="form-control" maxlength="90" size="90" type="text" name="article[title]" id="article_title">#}
+{#            </div>#}
+{#             <div class="form-group">#}
+{#              <label for="article_content">Content</label>#}
+{#              <input type="hidden" name="article[content]" id="article_content_trix_input_article">#}
+{#              <trix-editor id="article_content" input="article_content_trix_input_article" class="trix-content"#}
+{#                data-direct-upload-url="https://www.KnowBase.io/rails/active_storage/direct_uploads"#}
+{#                data-blob-url-template="https://www.KnowBase.io/rails/active_storage/blobs/:signed_id/:filename">#}
+{#              </trix-editor>#}
+{#            </div>#}
 
-            <!-- <div class="form-group">
-              <label for="article_title">Title</label>
-              <input class="form-control" maxlength="90" size="90" type="text" name="article[title]" id="article_title">
-            </div> -->
-            <!-- <div class="form-group">
-              <label for="article_content">Content</label>
-              <input type="hidden" name="article[content]" id="article_content_trix_input_article">
-              <trix-editor id="article_content" input="article_content_trix_input_article" class="trix-content"
-                data-direct-upload-url="https://www.KnowBase.io/rails/active_storage/direct_uploads"
-                data-blob-url-template="https://www.KnowBase.io/rails/active_storage/blobs/:signed_id/:filename">
-              </trix-editor>
-            </div> -->
+
+
+              <div class="form-group">
+              <textarea id="editor1"></textarea>
+            </div>
+
             <div class="mt-4 text-left">
               {# <a class="btn btn-secondary" href="{% url 'details' %}">Cancel</a> #}
               <button name="commit" type="submit" name="save_as_draft" value="save_as_draft" class="btn btn-secondary ml-2"

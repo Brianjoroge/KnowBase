@@ -22,7 +22,7 @@ class ArticleForm(forms.ModelForm):
         model = Article
 
         # specify fields to be used
-        fields = ['section', 'title', 'content']
+        fields = ['section', 'title', 'image','content']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

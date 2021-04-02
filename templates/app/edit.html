@@ -12,19 +12,20 @@
       {% include 'partials/_navbar.html' %}
     <div class="container-fluid" style="padding: 1.5rem;">
       
-<div class="toolbar mb-4">
+{#<div class="toolbar mb-4">#}
   {# <a class="btn btn-light btn-sm mx-1" href="{% url 'details' %}"> #}
-    <i class="icon ion-ios-arrow-back mr-1"></i> Back to Section
-</a></div>
+{#    <i class="icon ion-ios-arrow-back mr-1"></i> Back to Section#}
+{#</a></div>#}
 
 <div class="h5 mb-3">Edit Section</div>
 <div class="card">
   <div class="card-body">
-    <form id="section-form" action="" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="eGLxFDVrDpervPPqcatB5Oz5x8K9z94JXZSd2H9T6IC2XBHhCoqpfLaBvzR9KkaidS4HEaxIPbQwVvxzFGTWFA==">
-      <div class="row">
+    <form id="section-form" action="" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put">
+      {% csrf_token %}
+        <div class="row">
         <div class="form-group col-lg-6">
           <label for="section_name">Section Name</label>
-          <input class="form-control" maxlength="40" required="required" size="40" type="text" value="describe" name="section[name]" id="section_name">
+          <input class="form-control" maxlength="40" required="required" size="40" type="text" placeholder="Section Name" name="section[name]" id="section_name">
         </div>
       </div>
 

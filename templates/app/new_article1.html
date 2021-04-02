@@ -1,0 +1,327 @@
+﻿{% extends 'base1.html' %}
+{% load static %}
+{% block title %}
+    Create an Article
+{% endblock %}
+{% block content %}
+
+
+    {% include 'web_navbar.html' %}
+
+    <div class="page-title-area">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>Article</h2>
+                <p>Create an Article</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="our-loving-clients ptb-100 bg-f4f5fe">
+        <div class="container">
+            <div class="contact-inner">
+
+                <div class="h5 mb-3">New Article</div>
+                <div class="card">
+                    <div class="card-body">
+
+                        <form id="article-form" action="{% url 'newarticle' %}" accept-charset="UTF-8" method="post">
+                            {% csrf_token %}
+
+                            {{ form.as_p }}
+                            {{ form.media }}
+
+
+                            {#             <div class="form-group">#}
+                            {#              <label for="article_section_id">Section</label>#}
+                            {#              <select class="form-control" name="article[section_id]" id="article_section_id">#}
+                            {#                <option value="">--</option>#}
+                            {#                <option selected="selected" value="1032">describe</option>#}
+                            {#              </select>#}
+                            {#            </div>#}
+                            {##}
+                            {#             <div class="form-group">#}
+                            {#              <label for="article_title">Title</label>#}
+                            {#              <input class="form-control" maxlength="90" size="90" type="text" name="article[title]" id="article_title">#}
+                            {#            </div>#}
+                            {#             <div class="form-group">#}
+                            {#              <label for="article_content">Content</label>#}
+                            {#              <input type="hidden" name="article[content]" id="article_content_trix_input_article">#}
+                            {#              <trix-editor id="article_content" input="article_content_trix_input_article" class="trix-content"#}
+                            {#                data-direct-upload-url="https://www.KnowBase.io/rails/active_storage/direct_uploads"#}
+                            {#                data-blob-url-template="https://www.KnowBase.io/rails/active_storage/blobs/:signed_id/:filename">#}
+                            {#              </trix-editor>#}
+                            {#            </div>#}
+
+
+
+
+                            <div class="mt-4 text-left">
+                                {# <a class="btn btn-secondary" href="{% url 'details' %}">Cancel</a> #}
+                                <button name="commit" type="submit" name="save_as_draft" value="save_as_draft"
+                                        class="btn btn-secondary ml-2"
+                                        data-disable-with="Please wait...">
+                                    <i class="icon ion-ios-eye-off mr-2"></i>Save as a Draft
+                                </button>
+                                <button name="commit" type="submit" name="save_and_publish" value="save_and_publish"
+                                        class="btn btn-primary ml-2"
+                                        data-disable-with="Please wait...">
+                                    <i class="icon ion-ios-eye mr-2"></i>Save and Publish
+                                </button>
+                                <a class="btn btn-black ml-2 font-weight-semibold" data-toggle="modal"
+                                   data-target="#article-writer-modal" href="javascript:;" style="background-color: #ff612f;">
+                                    <i class="icon ion-ios-flask mr-2"></i>AI Article Writer
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal" id="article-writer-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 800px;">
+                        <div class="modal-content">
+                            <div class="modal-body p-5">
+                                <div class="">
+                                    <div class="">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                                style="position: relative; top: -20px;">
+                                            <span aria-hidden="true"><i class="icon ion-ios-close"
+                                                                        style="font-size: 40px;"></i></span>
+                                        </button>
+
+                                        <div class="h3 mb-3 text-center">KnowBase AI Article Writer</div>
+
+                                        <p class="mb-3">
+                                            This tool generates knowledge base articles with AI.
+                                        </p>
+                                        <p class="mb-3">
+                    <span class="font-weight-bold">The content it writes is usually a great starting point, but we
+                      recommend carefully reading and editing the output. It's not perfect, and it will make
+                      mistakes.</span>
+                                        </p>
+
+                                        <p class="mb-3">
+                                            Add at least one short, summarized key point you'd like covered in your
+                                            article. Short, simple
+                                            sentences work best.
+                                        </p>
+
+                                        <p class="mb-3">
+                                            If you're not happy with the output, you can keep running the generator
+                                            until you get something you
+                                            like. Try playing around with the wording of your article title and key
+                                            points to get the output you
+                                            want.
+                                        </p>
+
+{#                                        <p class="mb-3">#}
+{#                    <span class="font-weight-bold">Each time you click the Write/Rewrite Article button you use a#}
+{#                      request from your monthly quota.</span>#}
+{#                                        </p>#}
+                                    </div>
+                                    <hr>
+
+                                    <form id="article-writer-form" action="article_writer" accept-charset="UTF-8"
+                                          data-remote="true"
+                                          method="post"><input type="hidden" name="authenticity_token"
+                                                               value="pGOQgZHFKTpGEuNUF77iat0b7Uwmq90746oUrl4uUAFBpvzZs/UPMaCZFzWrjOJOPvSHj9784398swT5eklSRg==">
+                                        {% csrf_token %}
+                                        <div class="form-group mb-3">
+                                            <label for="company_name">Company name</label>
+                                            <input class="form-control" placeholder="Umbrella Corp." required="required"
+                                                   maxlength="60"
+                                                   size="60" type="text" name="company_name" id="company_name">
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="article_title">Article title</label>
+                                            <input class="form-control" placeholder="How do you protect my privacy?"
+                                                   required="required"
+                                                   id="article_writer_article_title" maxlength="80" size="80"
+                                                   type="text" name="article_title">
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label for="bullet_points">Add at least one key point to be covered in your
+                                                article</label>
+
+                                            <div id="bullet-points-container">
+                                                <div class="input-group mb-2 bullet-points-text-field">
+                                                    <input class="form-control"
+                                                           placeholder="we use state of the art encryption"
+                                                           required="required"
+                                                           maxlength="80" size="80" type="text" name="bullet_points[]"
+                                                           id="bullet_points[]">
+                                                </div>
+                                                <div class="input-group mb-2 bullet-points-text-field">
+                                                    <input class="form-control"
+                                                           placeholder="all requests are protected by HTTPS"
+                                                           maxlength="80"
+                                                           size="80" type="text" name="bullet_points[]"
+                                                           id="bullet_points[]">
+                                                </div>
+                                                <div class="input-group mb-2 bullet-points-text-field">
+                                                    <input class="form-control"
+                                                           placeholder="every employee is carefully vetted"
+                                                           maxlength="80"
+                                                           size="80" type="text" name="bullet_points[]"
+                                                           id="bullet_points[]">
+                                                </div>
+                                                <div class="input-group mb-2 bullet-points-text-field">
+                                                    <input class="form-control" placeholder="another key point..."
+                                                           maxlength="80" size="80"
+                                                           type="text" name="bullet_points[]" id="bullet_points[]">
+                                                </div>
+                                                <div class="input-group mb-2 bullet-points-text-field">
+                                                    <input class="form-control" placeholder="another key point..."
+                                                           maxlength="80" size="80"
+                                                           type="text" name="bullet_points[]" id="bullet_points[]">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <center>
+                                            You have <span class="font-weight-bold"><span
+                                                id="article-writer-requests-remaining">74</span> of
+                      <span id="article-writer-requests-per-month">75</span> (<span
+                                                    id="article-writer-requests-remaining-percentage">99%</span>)</span>
+                                            article writer requests
+                                            remaining this month.
+                                        </center>
+
+                                        <div class="text-center mt-3">
+                                            <button name="button" type="button"
+                                                    class="btn btn-outline-primary mx-2 d-none"
+                                                    id="start-over-button">
+                                                <i class="icon ion-ios-trash mr-2"></i>Start Over
+                                            </button>
+                                            <button name="button" type="submit" class="btn btn-primary mx-2"
+                                                    id="write-article-button"
+                                                    data-disable-with="Please wait...">
+                                                <i class="icon ion-ios-paper mr-2"></i>Write Article
+                                            </button>
+                                            <button name="button" type="submit" class="btn btn-primary mx-2 d-none"
+                                                    id="rewrite-article-button" data-disable-with="Please wait..."
+                                                    data-confirm="This will overwrite the current generated article below. Is that ok?">
+                                                <i class="icon ion-ios-refresh mr-2"></i>Rewrite Article
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div class="d-none" id="generated-article-container">
+                                        <form action="/app/articles/new" accept-charset="UTF-8" data-remote="true"
+                                              method="post"><input
+                                                type="hidden" name="authenticity_token"
+                                                value="rm/+6qbOJvkLpn9M/r+e7jR224Dr4EGhYcSS2oecghy+sIV4/4i7RU4mgtyTaspqGDXctDDXwtESuA5N6YGhYA==">
+                                            <div class="form-group">
+                                                <label>Generated Article</label>
+                                                <textarea class="form-control" rows="15"
+                                                          id="generated-article"></textarea>
+                                            </div>
+
+                                            <div class="text-center mt-3">
+                                                <button name="button" type="button" class="btn btn-primary mx-2"
+                                                        id="use-this-article-btn">
+                                                    <i class="icon ion-md-checkmark mr-2"></i>Use This Article
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                                <!-- <div class="text-center">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                          </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $(function () {
+                        $articleWriterForm = $("#article-writer-form");
+                        $generatedArticle = $("#generated-article");
+                        $generatedArticleContainer = $("#generated-article-container");
+                        $addAnotherKeyPointButton = $("#add-another-key-point-button");
+                        $writeArticleButton = $("#write-article-button");
+                        $rewriteArticleButton = $("#rewrite-article-button");
+                        $startOverButton = $("#start-over-button");
+                        $articleWriterRequestsRemaining = $("#article-writer-requests-remaining");
+                        $articleWriterRequestsPerMonth = $("#article-writer-requests-per-month");
+                        $articleWriterRequestsRemainingPercentage = $("#article-writer-requests-remaining-percentage");
+
+                        $articleWriterQuotaExceeded = false;
+
+                        $startOverButton.on("click", function (event) {
+                            if (window.confirm("This will completely reset the Article Writer form. Are you sure?")) {
+                                $articleWriterForm.trigger("reset");
+                                $generatedArticle.val("");
+                                $generatedArticleContainer.addClass("d-none");
+                                $startOverButton.addClass("d-none");
+                                $writeArticleButton.removeClass("d-none");
+                                $rewriteArticleButton.addClass("d-none");
+                            }
+                        });
+
+                        $articleWriterForm.on("submit", function (event) {
+                            $generatedArticle.prop("disabled", true);
+                            $generatedArticle.val("Please wait, your article is being generated...");
+                        });
+
+                        $articleWriterForm.on('ajax:success', function (event) {
+                            response_object = event.detail[0];
+                            console.log(response_object)
+                            $writeArticleButton.addClass("d-none");
+                            $rewriteArticleButton.removeClass("d-none");
+                            $startOverButton.removeClass("d-none");
+                            $generatedArticle.val("");
+                            $generatedArticle.val(response_object["final_choice"]);
+                            $generatedArticleContainer.removeClass("d-none");
+                            $generatedArticle.prop("disabled", false);
+
+                            // update quota display counter
+                            $articleWriterRequestsRemaining.html(response_object["quota"]["requests_remaining"]);
+                            $articleWriterRequestsPerMonth.html(response_object["quota"]["requests_per_month"]);
+                            $articleWriterRequestsRemainingPercentage.html(response_object["quota"]["requests_remaining_percentage"]["formatted"]);
+                            $articleWriterQuotaExceeded = response_object["quota"]["quota_exceeded"];
+                        }).on('ajax:error', function (event) {
+                            if (event.detail[2]["status"] == 429) {
+                                alert("You've used up your Article Writer quota this month. Your quota resets on the first of every month.\n\nPlease contact us at support@KnowBase.io if you're interested in a plan with a larger quota.");
+                            } else {
+                                alert("Something went wrong, please try again.");
+                            }
+                        }).on('ajax:complete', function (event) {
+                        });
+
+                        $('#article-writer-modal').on('show.bs.modal', function (e) {
+                            $("#article_writer_article_title").val($("#article_title").val());
+                        });
+
+                        $("#use-this-article-btn").click(function (e) {
+                            // copy the article writer's article title field to the actual article title field
+                            $("#article_title").val($("#article_writer_article_title").val());
+                            // append the generated article to the end of the existing document
+                            // var element = document.querySelector("#article_content");
+                            // var elementDocument = element.editor.getDocument();
+                            // var elementDocumentLength = elementDocument.getLength();
+                            // var cursorPositionEndOfDocument = elementDocumentLength - 1;
+                            // element.editor.setSelectedRange(cursorPositionEndOfDocument);
+                            // // if there's already text in the article content text editor, add 2 newlines before inserting the text
+                            // if (cursorPositionEndOfDocument > 0) {
+                            //   element.editor.insertLineBreak();
+                            //   element.editor.insertLineBreak();
+                            // }
+                            // element.editor.insertString($generatedArticle.val());
+                            CKEDITOR.instances.id_content.insertText($generatedArticle.val())
+                            // hide the modal
+                            $("#article-writer-modal").modal('hide');
+                        })
+                    });
+                </script>
+
+
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}
