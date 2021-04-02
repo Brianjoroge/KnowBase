@@ -196,7 +196,7 @@ def deletesection(request,id):
 
 
     return redirect('app')
-
+ 
 def customization(request):
     return render(request, 'app/customization2.html')
 
