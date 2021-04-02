@@ -5,6 +5,23 @@
 {% endblock %}
 {% block content %}
 
+{% if messages %}
+  {% for message in messages %}
+      {% if message.tags == 'success' %}
+
+          <script>
+              Notiflix.Notify.Success("{{ message }}");
+          </script>
+
+      {% else %}
+          <script>
+              Notiflix.Notify.Failure("{{ message }}");
+          </script>
+      {% endif %}
+  {% endfor %}
+
+{% endif %}
+
 
     {% include 'web_navbar.html' %}
 
@@ -584,37 +601,37 @@
     <section class="our-loving-clients ptb-100 bg-f4f5fe">
         <div class="container">
             <div class="contact-inner">
-                <form action="#" id="wizard">
-
+                <form action="#" method="post" id="wizard" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <h4></h4>
                     <section>
                         <h3>Basic details</h3>
 
 
                         <p><label for="company_title">Company Title:</label>
-                            <input type="text" name="company_title" maxlength="200"
+                            <input required type="text" name="company_title" maxlength="200"
                                    class="form-control" id="company_title" placeholder="Company Title" required="">
                         </p>
                         <p>
                             <label for="company_email">Support Email Address:</label>
 
-                            <input type="email" id="company_email"
+                            <input required type="email" id="company_email"
                                    name="company_email" class="form-control" placeholder="name@company.com" required>
                         </p>
                         <p>
                             <label for="company_logo">Company Logo:</label>
-                            <input type="file" name="company_logo" accept="image/*"
+                            <input required type="file" name="company_logo" accept="image/*"
                                    class="form-control" required="" id="id_image">
                         </p>
 
                         <p>
                             <label for="user_photo">User Photo</label>
-                            <input type="file" name="user_photo" accept="image/*"
+                            <input required type="file" name="user_photo" accept="image/*"
                                    class="form-control" required="" id="id_image">
                         </p>
                         <p>
                             <label for="about_me">About Me</label>
-                            <textarea class="form-control" rows="5" cols="30"
+                            <textarea required name="about_me" class="form-control" rows="5" cols="30"
                                       placeholder="Short message about yourself..." required=""></textarea>
                         </p>
                         <br>

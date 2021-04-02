@@ -2,14 +2,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http.response import JsonResponse,HttpResponse
 from .forms import ArticleForm, CommentForm
 # import openai
-from .models import Article, MainArticle
+from .models import Article, MainArticle, Customization
 from django.db.models import Count
 from django.conf import settings # new
 from django.views.decorators.csrf import csrf_exempt 
 # import stripe
 from django.views.generic import TemplateView
-
-
+from django.contrib import  messages
 
 # openai.api_key = "sk-exLmhJVVMDqkAu4qyQ6n8syqwwyLA9IxJomrr5P0"
 
@@ -193,11 +192,55 @@ def editsection(request,id):
 def deletesection(request,id):
     obj = MainArticle.objects.filter(id=id)
     obj.delete()
-
-
     return redirect('app')
  
+
 def customization(request):
+    if request.method == 'POST':        
+        obj = Customization()  # gets new object        
+        obj.user_id = request.user.id
+        obj.company_title = request.POST.get('company_title')
+        obj.support_email  = request.POST.get('company_email')
+
+        if 'company_logo' in request.FILES:
+            filename = request.FILES['company_logo']
+            if str(filename).lower().split('.')[-1] in ["jpeg","png","jpg","svg"]:
+                obj.company_logo = request.FILES['company_logo']                
+            else:
+                messages.warning(request, "please upload an company logo")                
+                return redirect('customization')
+        else:
+            obj.company_logo = None
+
+        
+        if 'user_photo' in request.FILES:
+            filename = request.FILES['user_photo']
+            if str(filename).lower().split('.')[-1] in ["jpeg","png","jpg","svg"]:
+                obj.user_image = request.FILES['user_photo']
+            else:
+                messages.warning(request, "please upload an image")                
+                return redirect('viewstudents')
+        else:
+            obj.user_image = None
+        obj.about_me  = request.POST.get('about_me')
+        obj.facebook_link  = request.POST.get('facebook')
+        obj.twitter_link  = request.POST.get('twitter')
+        obj.insta_link  = request.POST.get('instagram')
+        obj.font  = request.POST.get('font')
+        obj.header_color  = request.POST.get('header_color')
+        if request.POST.get('rtl') == "on":
+            obj.rtl_mode  = 1
+        else:
+            obj.rtl_mode  = 0
+        obj.navigation_links  = request.POST.get('option_link_1') + "|" + request.POST.get('option_link_2')
+        obj.navigation_links_title   = request.POST.get('option_name_1') + "|" + request.POST.get('option_name_2')
+        obj.home_page   = request.POST.get('home_page_layout')
+        obj.layout_page  = request.POST.get('kb_layout')
+        obj.article_page  = request.POST.get('article_layout')
+        obj.custom_domain   = request.POST.get('site[custom_domain]')    
+        obj.save()
+        messages.success(request, "Settings are changes")
+                    
     return render(request, 'app/customization2.html')
 
 def general(request):
@@ -206,7 +249,6 @@ def general(request):
 @csrf_exempt
 def billing(request):
     # new
-        
     # if request.method == 'GET':
     #     stripe_config = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
     #     return JsonResponse(stripe_config, safe=False)
@@ -215,7 +257,6 @@ def billing(request):
 @csrf_exempt
 def config(request):
     # new
-        
     if request.method == 'GET':
         stripe_config = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
         return JsonResponse(stripe_config, safe=False)

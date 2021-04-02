@@ -354,7 +354,7 @@
 
     function refreshPagination(wizard, options, state) {
         if (options.enablePagination) {
-            var finish = wizard.find(".actions a[href$='#finish']").parent(),
+            var finish = wizard.find(".actions a[href$='javascript:{}']").parent(),
                 next = wizard.find(".actions a[href$='#next']").parent();
             if (!options.forceMoveForward) {
                 var previous = wizard.find(".actions a[href$='#previous']").parent();
@@ -475,7 +475,11 @@
             }
             buttons += buttonTemplate.format("next", options.labels.next);
             if (options.enableFinishButton) {
-                buttons += buttonTemplate.format("finish", options.labels.finish);
+                
+                // buttons += "<li><button name=\"submit\" type=\"submit\"  class=\"btn btn-primary ml-2\" data-disable-with=\"Please wait...\">Submit</button> </li>"
+                
+                buttons += "<li><a href=\"javascript:{}\" onclick=\"document.getElementById('wizard').submit();\" role=\"menuitem\">Submit</a></li>"
+                // buttons += buttonTemplate.format("finish", options.labels.finish);
             }
             if (options.enableCancelButton) {
                 buttons += buttonTemplate.format("cancel", options.labels.cancel);
