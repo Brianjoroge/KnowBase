@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext|Kadwa:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+body,
+blockquote:before, q:before{
+  font-family: 'Open Sans';
+  font-weight: 400;
+  	
+}
+body{
+	font-size: 1.6em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.submit,
+.mks_read_more a,
+input[type="submit"],
+a.mks_button,
+.cover-letter,
+.post-letter,
+.typology-pagination a,
+.typology-pagination span,
+.comment-author .fn,
+.post-date-month,
+.typology-button-social,
+.mks_autor_link_wrap a,
+.entry-pre-title,
+.typology-button{
+  font-family: 'Kadwa';
+  font-weight: 700;
+  }
+
+.typology-header .typology-nav{
+  font-family: 'Open Sans';
+  font-weight: 600;
+  }
+.typology-cover .entry-title,
+.typology-cover h1 { 
+	font-size: 7.2rem;
+}
+
+h1, .h1 {
+  font-size: 5.2rem;
+}
+
+h2, .h2 {
+  font-size: 3.5rem;
+}
+
+h3, .h3 {
+  font-size: 2.8rem;
+}
+
+h4, .h4 {
+  font-size: 2.3rem;
+}
+
+h5, .h5,
+.typology-layout-c.post-image-on .entry-title {
+  font-size: 1.8rem;
+}
+
+h6, .h6 {
+  font-size: 1.5rem;
+}
+.widget{
+	font-size: 1.4rem;
+}
+.typology-header .typology-nav a{
+	font-size: 1.1rem;
+}
+
+.typology-layout-b .post-date-hidden,
+.meta-item{
+	font-size: 1.3rem;
+}
+
+.post-letter {
+	font-size: 28rem;
+}
+
+.cover-letter {
+	font-size: 64rem;
+}
+
+.typology-button,
+.submit{
+	text-transform: uppercase;
+}
+
+.cover-letter{
+  padding-top: 0;
+}

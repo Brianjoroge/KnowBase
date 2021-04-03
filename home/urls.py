@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from ragister.views import signup
 from login.views import signin
 from . import views
-
+ 
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index1.html"), name='index'),

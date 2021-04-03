@@ -1,29 +1,32 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http.response import JsonResponse,HttpResponse
 from .forms import ArticleForm, CommentForm
-# import openai
+import openai
 from .models import Article, MainArticle, Customization
 from django.db.models import Count
 from django.conf import settings # new
 from django.views.decorators.csrf import csrf_exempt 
-# import stripe
+import stripe
 from django.views.generic import TemplateView
 from django.contrib import  messages
 
-# openai.api_key = "sk-exLmhJVVMDqkAu4qyQ6n8syqwwyLA9IxJomrr5P0"
+openai.api_key = "sk-exLmhJVVMDqkAu4qyQ6n8syqwwyLA9IxJomrr5P0"
 
 def newarticle(request):
     context=dict()
-    form = ArticleForm(request.POST or None)
+    
     if request.method == 'POST':
-
+        print(request.POST)
+        form = ArticleForm(request.POST, request.FILES)
+        print(form.is_valid())
         if form.is_valid():
             # process form data
             obj = Article()  # gets new object
             obj.title = form.cleaned_data['title']
             obj.section = form.cleaned_data['section']
             obj.content = form.cleaned_data['content']
-            print(request.POST)
+            obj.image = form.cleaned_data['image']
+            
             if 'save_and_publish' in request.POST['commit']:
                 obj.published = 1
             elif 'save_as_draft' in request.POST['commit']:
@@ -103,8 +106,6 @@ def section_describe(request,id):
     section_name = get_object_or_404(MainArticle, id = id)
     article = Article.objects.filter(section__id=id)
     return render(request, 'app/published_sections.html', {"articles": article, "section_name": section_name.title})
-
-
 
 
 def published_article(request,id):

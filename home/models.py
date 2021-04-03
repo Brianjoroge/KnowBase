@@ -38,7 +38,7 @@ class MainArticle(models.Model):
     icons = models.CharField(max_length=100)
     def __str__(self):
         return self.title
-
+ 
 class Article(models.Model):
     section = models.ForeignKey(MainArticle,on_delete=models.CASCADE)
     title = models.CharField(max_length=200)

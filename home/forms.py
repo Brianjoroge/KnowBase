@@ -32,6 +32,5 @@ class ArticleForm(forms.ModelForm):
         self.fields['title'].widget.attrs.update({'id': 'article_title'})
         # self.fields['content'].widget.attrs.update({'id': 'article_content'})
         
-
-    def clean(self):
-        cleaned_data = super(ArticleForm, self).clean()
+    # def clean(self):
+    #     cleaned_data = super(ArticleForm, self).clean()
